@@ -1,0 +1,7 @@
+uvicorn~=0.29.0
+fastapi~=0.110.0
+SQLAlchemy~=2.0.29
+pydantic~=2.6.4
+pydantic_settings
+psycopg
+asyncpg
