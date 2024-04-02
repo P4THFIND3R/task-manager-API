@@ -2,6 +2,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import BigInteger, String, ForeignKey, DateTime
 
 from src.database.db import Base
+from src.api.schemas.user import User
 
 
 class Tasks(Base):
@@ -23,3 +24,10 @@ class Users(Base):
     id: Mapped[BigInteger] = mapped_column(BigInteger, primary_key=True, nullable=False, autoincrement=True, index=True)
     username: Mapped[String] = mapped_column(String, nullable=False)
     password: Mapped[String] = mapped_column(String, nullable=False)
+
+    def to_read_model(self) -> User:
+        return User(
+            id=self.id,
+            username=self.username,
+            password=self.password,
+        )
