@@ -14,7 +14,7 @@ class Session(BaseModel):
 
 class Payload(BaseModel):
     username: str
-    jwt_exp: float
+    exp: float
 
 
 class Token(BaseModel):

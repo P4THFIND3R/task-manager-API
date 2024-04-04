@@ -5,10 +5,9 @@ from typing import Annotated
 from src.api.schemas.user import UserSchema
 import src.auth.security as security
 import src.auth.exceptions as exceptions
-from .schemas import Session, SessionToRedis, Tokens
-from .db import pool
-from .dependencies import user_service_dep, fingerprint_dep, redis_dep
-from .repository import add_session
+from .schemas import Session, SessionToRedis, Tokens, Payload
+from .dependencies import user_service_dep, fingerprint_dep
+from .repository import add_session, get_session
 
 router = APIRouter(
     prefix='/auth',
@@ -33,8 +32,7 @@ async def signin(userdata: UserSchema, user_service: user_service_dep):
 
 @router.post('/login')
 async def authentication(response: Response,
-                         fingerprint: fingerprint_dep, cache: redis_dep,
-                         user: Annotated[str, 'username'] = Depends(check_user)):
+                         fingerprint: fingerprint_dep, user: Annotated[str, 'username'] = Depends(check_user)):
     # create access and refresh tokens
     access_token: str = security.create_access_token(user)
     session_to_add: SessionToRedis = security.create_session(user, fingerprint)
@@ -44,4 +42,31 @@ async def authentication(response: Response,
     # setting tokens in cookies
     security.set_tokens_to_cookies(response,
                                    Tokens(access_token=access_token, refresh_token=session_to_add.refresh_token))
-    return {'access_token': access_token, 'refresh_token': session_to_add.refresh_token}
+    return Tokens(**{'access_token': access_token, 'refresh_token': session_to_add.refresh_token})
+
+
+@router.post('/update')
+async def update_tokens(request: Request, response: Response,
+                        fingerprint: fingerprint_dep):
+    # get tokens from cookies, we are only interested in refresh_token, access_token may be missing
+    tokens: Tokens = security.get_tokens_from_cookies(request)
+    # get session by refresh token
+    session: Session = get_session(tokens.refresh_token)
+    # check if session is valid and not expired
+    security.check_session(session, fingerprint=fingerprint)
+
+    tokens: Tokens = await authentication(response, fingerprint, session.username)
+    print("Tokens updated successfully!")
+    return tokens
+
+
+@router.post('/authorize')
+async def authorize(request: Request, response: Response, fingerprint: fingerprint_dep):
+    # get tokens from cookies
+    tokens: Tokens = security.get_tokens_from_cookies(request)
+    try:
+        payload: Payload = security.check_access_token(tokens.access_token)
+    except exceptions.AccessTokenExpired:
+        tokens = await update_tokens(request, response, fingerprint)
+        payload: Payload = security.check_access_token(tokens.access_token)
+    return Payload.model_validate(payload)

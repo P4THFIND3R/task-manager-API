@@ -9,7 +9,8 @@ from datetime import datetime, timedelta
 from src.auth import exceptions
 from src.api.schemas.user import User
 from src.config import settings
-from .schemas import Session, SessionToRedis, Tokens
+from .schemas import Session, SessionToRedis, Tokens, Payload
+from .exceptions import TokenNotFoundError, AccessTokenExpired
 
 pwd_context = CryptContext(schemes=["pbkdf2_sha256"], deprecated="auto")
 
@@ -46,7 +47,7 @@ def create_session(username: str, fingerprint: str):
 
     session = Session(
         username=username,
-        exp_at=(datetime.now() + timedelta(minutes=settings.JWT_REFRESH_TOKEN_EXPIRES_DAYS)).timestamp(),
+        exp_at=(datetime.now() + timedelta(days=settings.JWT_REFRESH_TOKEN_EXPIRES_DAYS)).timestamp(),
         fingerprint=fingerprint,
         created_at=datetime.now()
     )
@@ -57,3 +58,33 @@ def set_tokens_to_cookies(response: Response, tokens: Tokens):
     response.set_cookie('access_token', tokens.access_token, httponly=True)
     response.set_cookie('refresh_token', tokens.refresh_token, httponly=True)
     return response
+
+
+def get_tokens_from_cookies(request: Request):
+    access_token = request.cookies.get('access_token')
+    refresh_token = request.cookies.get('refresh_token')
+    if refresh_token:
+        return Tokens(access_token=access_token, refresh_token=refresh_token)
+    else:
+        raise TokenNotFoundError
+
+
+def check_session(session: Session, fingerprint: str):
+    if session:
+        if session.fingerprint != fingerprint:
+            raise exceptions.TokenError
+        if session.exp_at < datetime.now().timestamp():
+            raise exceptions.RefreshTokenExpired
+    return True
+
+
+def check_access_token(access_token: str):
+    if not access_token:
+        raise AccessTokenExpired
+    try:
+        payload = jwt.decode(access_token, key=settings.SECRET_KEY, algorithms=[settings.JWT_ALGORITHM])
+        return Payload.model_validate(payload)
+    except jwt.exceptions.DecodeError:
+        raise exceptions.TokenError
+    except jwt.exceptions.ExpiredSignatureError:
+        raise AccessTokenExpired
