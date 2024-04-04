@@ -7,14 +7,16 @@ class Settings(BaseSettings):
     """
     Settings for the app.
     """
-    app_name: str
-    app_description: str | None
+    APP_NAME: str
+    APP_DESCRIPTION: str | None
 
     # authentication
-    secret_key: str
-    jwt_algorithm: str
-    jwt_access_token_expires_minutes: int
-    jwt_refresh_token_expires_days: int
+    SECRET_KEY: str
+    JWT_ALGORITHM: str
+    JWT_ACCESS_TOKEN_EXPIRES_MINUTES: int
+    JWT_REFRESH_TOKEN_EXPIRES_DAYS: int
+    # if the number of current user sessions is greater than the value of this variable, then all sessions are canceled
+    USER_MAX_ACTIVE_SESSIONS: int = 5
 
     # DB parameters
     DB_HOST: str
