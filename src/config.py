@@ -30,6 +30,18 @@ class Settings(BaseSettings):
     POSTGRES_USER: str = 'postgres'
     POSTGRES_PASSWORD: str = 'admin'
 
+    # redis params
+    REDIS_HOST: str = 'localhost'
+    REDIS_PORT: int = 6379
+    REDIS_DB: int = 0
+    REDIS_PASSWORD: str = ''
+    REDIS_PREFIX: str = ''
+    REDIS_MAX_CONNECTIONS: int = 10
+    REDIS_MIN_CONNECTIONS: int = 1
+    REDIS_MAX_IDLE_TIME: int = 60
+    REDIS_MAX_ACTIVE_TIME: int = 60
+    REDIS_CONNECTION_TIMEOUT: int = 10
+
     @property
     def ASYNC_DATABASE_URL(self):
         return f"postgresql+{self.DB_DRIVER_ASYNC}://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"

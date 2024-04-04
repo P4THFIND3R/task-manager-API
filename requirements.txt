@@ -5,3 +5,5 @@ pydantic~=2.6.4
 pydantic_settings
 psycopg
 asyncpg
+redis~=5.0.3
+alembic~=1.13.1
