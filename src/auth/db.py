@@ -1,4 +1,3 @@
-# import redis
 import redis.asyncio.client as redis
 from src.config import settings
 

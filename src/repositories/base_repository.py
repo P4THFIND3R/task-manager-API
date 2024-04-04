@@ -9,10 +9,6 @@ class BaseRepository(ABC):
     async def get_all(self):
         raise NotImplementedError
 
-    @abstractmethod
-    async def get_by_id(self, req_id: int):
-        raise NotImplementedError
-
 
 class Repository(BaseRepository):
     model = None
@@ -25,10 +21,12 @@ class Repository(BaseRepository):
         result = await self.session.execute(stmt)
         return result.scalars().all()
 
-    async def get_by_id(self, req_id: int) -> model:
-        stmt = select(self.model).where(self.model.id == req_id)
+    async def get_by_username(self, username: str) -> model:
+        stmt = select(self.model).where(self.model.username == username)
         result = await self.session.execute(stmt)
-        return result.scalar_one().to_read_model()
+        result = result.first()
+        if result:
+            return result[0].to_read_model()
 
     async def add_one(self, data: dict) -> model:
         stmt = insert(self.model).values(**data).returning(self.model)

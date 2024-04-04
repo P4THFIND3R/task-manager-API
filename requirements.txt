@@ -7,3 +7,5 @@ psycopg
 asyncpg
 redis~=5.0.3
 alembic~=1.13.1
+passlib~=1.7.4
+bcrypt

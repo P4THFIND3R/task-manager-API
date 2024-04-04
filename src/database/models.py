@@ -21,13 +21,11 @@ class Tasks(Base):
 class Users(Base):
     __tablename__ = "users"
 
-    id: Mapped[BigInteger] = mapped_column(BigInteger, primary_key=True, nullable=False, autoincrement=True, index=True)
-    username: Mapped[String] = mapped_column(String, nullable=False)
+    username: Mapped[String] = mapped_column(String, primary_key=True, index=True, nullable=False)
     password: Mapped[String] = mapped_column(String, nullable=False)
 
     def to_read_model(self) -> User:
         return User(
-            id=self.id,
             username=self.username,
-            password=self.password,
+            password=self.password
         )

@@ -7,4 +7,4 @@ class UserSchema(BaseModel):
 
 
 class User(UserSchema):
-    id: int
+    pass

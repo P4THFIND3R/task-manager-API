@@ -6,12 +6,15 @@ class UserService:
     def __init__(self, uow: IUnitOfWork):
         self.uow = uow
 
-    async def get_user(self, user_id: int):
+    async def get_user(self, username: str):
         async with self.uow:
-            res = await self.uow.user_repos.get_by_id(user_id)
+            res = await self.uow.user_repos.get_by_username(username)
             return res
 
     async def create_user(self, user: UserSchema):
         async with self.uow:
             res = await self.uow.user_repos.add_one(user.model_dump())
-            return res.to_read_model()
+            res = res.to_read_model()
+            await self.uow.commit()
+            return res
+
