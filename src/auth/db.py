@@ -6,7 +6,7 @@ def create_redis_pool():
     return ConnectionPool(
         host=settings.REDIS_HOST,
         port=settings.REDIS_PORT,
-        db=settings.REDIS_DB,
+        db=settings.REDIS_AUTH_DB,
         decode_responses=True,
         max_connections=10
     )

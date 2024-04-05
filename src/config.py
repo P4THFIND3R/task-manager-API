@@ -35,7 +35,8 @@ class Settings(BaseSettings):
     # redis params
     REDIS_HOST: str = 'localhost'
     REDIS_PORT: int = 6379
-    REDIS_DB: int = 0
+    REDIS_AUTH_DB: int = 0
+    REDIS_WS_DB: int = 1
     REDIS_PASSWORD: str = ''
     REDIS_PREFIX: str = ''
     REDIS_MAX_CONNECTIONS: int = 10

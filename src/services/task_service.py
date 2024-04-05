@@ -15,7 +15,6 @@ class TaskService:
         async with self.uow:
             res = await self.uow.task_repos.get_all(username=username)
             for task in res:
-                print(task)
                 if completed is False:
                     if task.status.value == 'completed':
                         res.remove(task)
