@@ -5,6 +5,6 @@ from src.auth.router import authorize
 router = APIRouter(tags=["users"], prefix="/users", dependencies=[Depends(authorize)])
 
 
-@router.get('/test')
+@router.get('/ping')
 def test():
-    print(1)
+    return "pong"

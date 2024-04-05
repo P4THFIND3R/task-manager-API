@@ -13,9 +13,17 @@ class TaskStatus(Enum):
 class Task(BaseModel):
     title: str
     description: str | None
-    status: TaskStatus = TaskStatus.pending
+    status: TaskStatus = TaskStatus.pending.value
 
     created_at: datetime = datetime.now()
     updated_at: datetime = datetime.now()
-    user_id: int
+    username: str | None = None
 
+
+class TaskFromDB(Task):
+    id: int | None = None
+
+
+class TaskUpdate(BaseModel):
+    status: TaskStatus
+    updated_at: datetime = datetime.now()

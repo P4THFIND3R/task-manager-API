@@ -52,12 +52,15 @@ async def update_tokens(request: Request, response: Response,
     tokens: Tokens = security.get_tokens_from_cookies(request)
     # get session by refresh token
     session: Session = get_session(tokens.refresh_token)
-    # check if session is valid and not expired
-    security.check_session(session, fingerprint=fingerprint)
+    if session:
+        # check if session is valid and not expired
+        security.check_session(session, fingerprint=fingerprint)
 
-    tokens: Tokens = await authentication(response, fingerprint, session.username)
-    print("Tokens updated successfully!")
-    return tokens
+        tokens: Tokens = await authentication(response, fingerprint, session.username)
+        print("Tokens updated successfully!")
+        return tokens
+    else:
+        raise exceptions.RefreshTokenExpired
 
 
 @router.post('/authorize')

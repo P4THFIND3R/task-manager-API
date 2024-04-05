@@ -3,6 +3,7 @@ from sqlalchemy import BigInteger, String, ForeignKey, DateTime
 
 from src.database.db import Base
 from src.api.schemas.user import User
+from src.api.schemas.task import Task, TaskFromDB
 
 
 class Tasks(Base):
@@ -15,13 +16,24 @@ class Tasks(Base):
 
     created_at: Mapped[DateTime] = mapped_column(DateTime, nullable=False)
     updated_at: Mapped[DateTime] = mapped_column(DateTime, nullable=False)
-    user_id: Mapped[BigInteger] = mapped_column(BigInteger, ForeignKey("users.id"), nullable=False)
+    username: Mapped[BigInteger] = mapped_column(String, ForeignKey("users.username"), nullable=False)
+
+    def to_read_model(self) -> TaskFromDB:
+        return TaskFromDB(
+            id=self.id,
+            title=self.title,
+            description=self.description,
+            status=self.status,
+            created_at=self.created_at,
+            updated_at=self.updated_at,
+            username=self.username
+        )
 
 
 class Users(Base):
     __tablename__ = "users"
 
-    username: Mapped[String] = mapped_column(String, primary_key=True, index=True, nullable=False)
+    username: Mapped[String] = mapped_column(String, primary_key=True, nullable=False)
     password: Mapped[String] = mapped_column(String, nullable=False)
 
     def to_read_model(self) -> User:

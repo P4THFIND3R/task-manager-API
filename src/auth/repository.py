@@ -2,7 +2,7 @@ from redis import Redis
 import json
 
 from src.config import settings
-from .schemas import SessionToRedis, Session
+from .schemas import Session
 from .db import get_redis
 
 

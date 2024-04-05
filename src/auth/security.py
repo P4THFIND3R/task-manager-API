@@ -1,13 +1,11 @@
 from secrets import token_hex
 
 from passlib.context import CryptContext
-from passlib.exc import UnknownHashError
 from fastapi import Request, Response
 import jwt
 from datetime import datetime, timedelta
 
 from src.auth import exceptions
-from src.api.schemas.user import User
 from src.config import settings
 from .schemas import Session, SessionToRedis, Tokens, Payload
 from .exceptions import TokenNotFoundError, AccessTokenExpired
