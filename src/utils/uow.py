@@ -3,6 +3,7 @@ from abc import ABC, abstractmethod
 from src.database.db import async_session_maker
 from src.repositories.user_repository import UserRepository
 from src.repositories.task_repository import TaskRepository
+from src.log.logger import logger
 
 
 class IUnitOfWork(ABC):
@@ -47,6 +48,7 @@ class UnitOfWork(IUnitOfWork):
 
     async def rollback(self):
         await self.session.rollback()
+        logger.info("rollback", self.session)
 
     async def commit(self):
         await self.session.commit()

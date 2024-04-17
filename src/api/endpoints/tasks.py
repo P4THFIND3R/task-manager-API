@@ -26,7 +26,7 @@ async def get_all_tasks(username: str, task_service: task_service_dep, completed
     return result
 
 
-@router.post('/')
+@router.post('/', status_code=201)
 async def add_task(task_data: Task, task_service: task_service_dep, user: Payload = Depends(authorize)):
     if not task_data.username:
         task_data.username = user.username

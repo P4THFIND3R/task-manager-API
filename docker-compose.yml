@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+  db:
+    image: postgres:15
+    container_name: db_app
+    expose:
+      - 5432
+    env_file:
+      - /src/.prod.env
+    #volumes:
+      #- /home/data2/postgresql:/var/lib/postgresql/data
+  redis:
+    image: redis:alpine3.19
+    container_name: redis_db
+    expose:
+      - 6379
+    #volumes:
+      #- /home/data2/redis:/data
+  app:
+    build:
+      context: .
+    env_file:
+      - /src/.prod.env
+    container_name: app
+    restart: on-failure
+    environment:
+      - APP_MODE=prod
+    command: bash -c "alembic upgrade head && uvicorn src.main:app --host 0.0.0.0 --port 80"
+    ports:
+      - "80:80"
+    depends_on:
+      - db

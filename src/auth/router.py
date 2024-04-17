@@ -8,6 +8,7 @@ import src.auth.exceptions as exceptions
 from .schemas import Session, SessionToRedis, Tokens, Payload
 from .dependencies import user_service_dep, fingerprint_dep
 from .repository import add_session, get_session
+from src.log.logger import logger
 
 router = APIRouter(
     prefix='/auth',
@@ -57,7 +58,7 @@ async def update_tokens(request: Request, response: Response,
         security.check_session(session, fingerprint=fingerprint)
 
         tokens: Tokens = await authentication(response, fingerprint, session.username)
-        print("Tokens updated successfully!")
+        logger.debug("Tokens updated successfully!")
         return tokens
     else:
         raise exceptions.RefreshTokenExpired

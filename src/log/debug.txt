@@ -1,0 +1,2079 @@
+2024-04-15T15:13:45.623401+0300 INFO Starting server...
+2024-04-15T15:16:42.113861+0300 INFO Starting server...
+2024-04-15T15:16:44.087238+0300 DEBUG Added session cdb38f766fa8f05b
+2024-04-15T15:16:44.088265+0300 DEBUG Tokens updated successfully!
+2024-04-15T15:16:54.138266+0300 DEBUG all user vlados sessions have been cleared
+2024-04-15T15:16:54.140261+0300 DEBUG Added session 7a5bcf402087086b
+2024-04-15T15:16:54.140261+0300 DEBUG Tokens updated successfully!
+2024-04-15T15:27:53.356108+0300 INFO Starting server...
+2024-04-15T15:28:36.529735+0300 INFO Starting server...
+2024-04-15T15:28:41.808784+0300 ERROR rollback
+2024-04-15T15:29:17.458985+0300 INFO Starting server...
+2024-04-15T15:29:19.149402+0300 ERROR rollback
+2024-04-15T15:29:23.253394+0300 ERROR Error 10061 connecting to localhost:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+[33m[1mTraceback (most recent call last):[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\anyio\streams\memory.py", line 97, in receive
+    return self.receive_nowait()
+           │    └ <function MemoryObjectReceiveStream.receive_nowait at 0x00000250B3B25080>
+           └ MemoryObjectReceiveStream(_state=MemoryObjectStreamState(max_buffer_size=0, buffer=deque([]), open_send_channels=0, open_rece...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\anyio\streams\memory.py", line 92, in receive_nowait
+    raise WouldBlock
+          └ <class 'anyio.WouldBlock'>
+
+[31m[1manyio.WouldBlock[0m
+
+
+[1mDuring handling of the above exception, another exception occurred:[0m
+
+
+[33m[1mTraceback (most recent call last):[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    message = await recv_stream.receive()
+                    │           └ <function MemoryObjectReceiveStream.receive at 0x00000250B3B25120>
+                    └ MemoryObjectReceiveStream(_state=MemoryObjectStreamState(max_buffer_size=0, buffer=deque([]), open_send_channels=0, open_rece...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\anyio\streams\memory.py", line 112, in receive
+    raise EndOfStream
+          └ <class 'anyio.EndOfStream'>
+
+[31m[1manyio.EndOfStream[0m
+
+
+[1mDuring handling of the above exception, another exception occurred:[0m
+
+
+[33m[1mTraceback (most recent call last):[0m
+
+  File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\src\[0m[32m[1mmain.py[0m", line [33m28[0m, in [35m<module>[0m
+    [1muvicorn[0m[35m[1m.[0m[1mrun[0m[1m([0m[1mapp[0m[1m,[0m [1mhost[0m[35m[1m=[0m[36m"0.0.0.0"[0m[1m,[0m [1mport[0m[35m[1m=[0m[34m[1m80[0m[1m,[0m [1mlog_level[0m[35m[1m=[0m[36m"critical"[0m[1m)[0m
+    [36m│       │   └ [0m[36m[1m<fastapi.applications.FastAPI object at 0x00000250B198B050>[0m
+    [36m│       └ [0m[36m[1m<function run at 0x00000250B397B4C0>[0m
+    [36m└ [0m[36m[1m<module 'uvicorn' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\venv\\Lib\\site-packages\\uvicorn\\__init__.py'>[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\uvicorn\main.py", line 575, in run
+    server.run()
+    │      └ <function Server.run at 0x00000250B3A09C60>
+    └ <uvicorn.server.Server object at 0x00000250B6E1A750>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ None
+           │       │   │    └ <function Server.serve at 0x00000250B3A09D00>
+           │       │   └ <uvicorn.server.Server object at 0x00000250B6E1A750>
+           │       └ <function run at 0x00000250B3333240>
+           └ <module 'asyncio' from 'C:\\Users\\PATHFIND3R\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\__init__.py'>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x00000250B6D72110>
+           │      └ <function Runner.run at 0x00000250B37A0900>
+           └ <asyncio.runners.Runner object at 0x00000250B6DD6010>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-pa...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x00000250B379E480>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x00000250B6DD6010>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x00000250B38079C0>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x00000250B37A0220>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x00000250B3328860>
+    └ <Handle Task.task_wakeup(<Future finished result=True>)>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=True>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=True>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=True>)>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x00000250B6DFB550>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 69, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x00000250B6...
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000025...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+                 │    └ <fastapi.applications.FastAPI object at 0x00000250B198B050>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x00000250B6DFB550>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x00000250B6...
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000025...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x00000250B6...
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000025...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x00000250B6ECA950>
+          └ <fastapi.applications.FastAPI object at 0x00000250B198B050>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x00000250B6ECFC40>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000025...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │    └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x00000250B6ECA890>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x00000250B6ECA950>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+                     │    │             │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next at 0x00000250B6EE0C20>
+                     │    │             └ <starlette.middleware.base._CachedRequest object at 0x00000250B6ECB910>
+                     │    └ <function catch_exceptions at 0x00000250B6E15760>
+                     └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x00000250B6ECA890>
+
+> File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\src\[0m[32m[1mmain.py[0m", line [33m18[0m, in [35mcatch_exceptions[0m
+    [35m[1mreturn[0m [35m[1mawait[0m [1mcall_next[0m[1m([0m[1mrequest[0m[1m)[0m
+    [36m             │         └ [0m[36m[1m<starlette.middleware.base._CachedRequest object at 0x00000250B6ECB910>[0m
+    [36m             └ [0m[36m[1m<function BaseHTTPMiddleware.__call__.<locals>.call_next at 0x00000250B6EE0C20>[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\base.py", line 165, in call_next
+    raise app_exc
+          └ ConnectionError('Error 10061 connecting to localhost:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос ...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+          │    │   │      │                      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x00000250B6F1B100>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000250B6ECFD80>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x00000250B6ECA810>
+          └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x00000250B6ECA890>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x00000250B6F1B100>
+          │                            │    │    │     │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000250B6ECFD80>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │                            │    │    └ <starlette.requests.Request object at 0x00000250B6ECA9D0>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x00000250B1982DD0>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x00000250B6ECA810>
+          └ <function wrap_app_handling_exceptions at 0x00000250B59F9D00>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000250B6F29300>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000250B6ECFD80>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          └ <fastapi.routing.APIRouter object at 0x00000250B1982DD0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 758, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000250B6F29300>
+          │    │                │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000250B6ECFD80>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x00000250B1982DD0>>
+          └ <fastapi.routing.APIRouter object at 0x00000250B1982DD0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 778, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000250B6F29300>
+          │     │      │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000250B6ECFD80>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │     └ <function Route.handle at 0x00000250B59FB380>
+          └ APIRoute(path='/auth/login', name='authentication', methods=['POST'])
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 299, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000250B6F29300>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000250B6ECFD80>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │    └ <function request_response.<locals>.app at 0x00000250B6E15300>
+          └ APIRoute(path='/auth/login', name='authentication', methods=['POST'])
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 79, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000250B6F29300>
+          │                            │    │        │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000250B6ECFD80>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │                            │    └ <starlette.requests.Request object at 0x00000250B6EE4310>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x00000250B6F293A0>
+          └ <function wrap_app_handling_exceptions at 0x00000250B59F9D00>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x00000250B6F294E0>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x00000250B6ECFD80>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          └ <function request_response.<locals>.app.<locals>.app at 0x00000250B6F293A0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 74, in app
+    response = await func(request)
+                     │    └ <starlette.requests.Request object at 0x00000250B6EE4310>
+                     └ <function get_request_handler.<locals>.app at 0x00000250B6E15260>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x00000250B16BC540>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'fingerprint': 'PostmanRuntime/7.37.3', 'user': 'vlados', 'response': <starlette.responses.Response object at 0x00000250B6EE...
+                 │         └ <function authentication at 0x00000250B6D9A980>
+                 └ <fastapi.dependencies.models.Dependant object at 0x00000250B6E10150>
+
+  File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\src\auth\[0m[32m[1mrouter.py[0m", line [33m41[0m, in [35mauthentication[0m
+    [1madd_session[0m[1m([0m[1muser[0m[1m,[0m [1msession_to_add[0m[35m[1m.[0m[1mrefresh_token[0m[1m,[0m [1msession_to_add[0m[35m[1m.[0m[1msession[0m[1m)[0m
+    [36m│           │     │              │              │              └ [0m[36m[1mSession(username='vlados', fingerprint='PostmanRuntime/7.37.3', exp_at=1713270559.160402, created_at=datetime.datetime(2024, ...[0m
+    [36m│           │     │              │              └ [0m[36m[1mSessionToRedis(refresh_token='098e4bd6934545dc', session=Session(username='vlados', fingerprint='PostmanRuntime/7.37.3', exp_...[0m
+    [36m│           │     │              └ [0m[36m[1m'098e4bd6934545dc'[0m
+    [36m│           │     └ [0m[36m[1mSessionToRedis(refresh_token='098e4bd6934545dc', session=Session(username='vlados', fingerprint='PostmanRuntime/7.37.3', exp_...[0m
+    [36m│           └ [0m[36m[1m'vlados'[0m
+    [36m└ [0m[36m[1m<function add_session at 0x00000250B6BBECA0>[0m
+
+  File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\src\auth\[0m[32m[1mrepository.py[0m", line [33m12[0m, in [35madd_session[0m
+    [35m[1mif[0m [1mcache[0m[35m[1m.[0m[1mhlen[0m[1m([0m[1muser[0m[1m)[0m [35m[1m>[0m [1msettings[0m[35m[1m.[0m[1mUSER_MAX_ACTIVE_SESSIONS[0m[1m:[0m
+    [36m   │     │    │       │        └ [0m[36m[1m5[0m
+    [36m   │     │    │       └ [0m[36m[1mDevelopmentSettings(APP_NAME='task_manager', APP_DESCRIPTION='task_manager pet project', SECRET_KEY='TimeIsLikeMusic-PlayItTi...[0m
+    [36m   │     │    └ [0m[36m[1m'vlados'[0m
+    [36m   │     └ [0m[36m[1m<function HashCommands.hlen at 0x00000250B6D298A0>[0m
+    [36m   └ [0m[36m[1mRedis<ConnectionPool<Connection<host=localhost,port=6379,db=0>>>[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\redis\commands\core.py", line 4991, in hlen
+    return self.execute_command("HLEN", name)
+           │    │                       └ 'vlados'
+           │    └ <function Redis.execute_command at 0x00000250B6D3B560>
+           └ Redis<ConnectionPool<Connection<host=localhost,port=6379,db=0>>>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\redis\client.py", line 540, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+           │    │             │    │              │               └ {}
+           │    │             │    │              └ 'HLEN'
+           │    │             │    └ <function ConnectionPool.get_connection at 0x00000250B6C5AD40>
+           │    │             └ ConnectionPool<Connection<host=localhost,port=6379,db=0>>
+           │    └ None
+           └ Redis<ConnectionPool<Connection<host=localhost,port=6379,db=0>>>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\redis\connection.py", line 1104, in get_connection
+    connection.connect()
+    │          └ <function AbstractConnection.connect at 0x00000250B6C596C0>
+    └ Connection<host=localhost,port=6379,db=0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\redis\connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+          │               │    └ <function Connection._error_message at 0x00000250B6C5A2A0>
+          │               └ Connection<host=localhost,port=6379,db=0>
+          └ <class 'redis.exceptions.ConnectionError'>
+
+[31m[1mredis.exceptions.ConnectionError[0m:[1m Error 10061 connecting to localhost:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.[0m
+2024-04-15T15:29:47.833399+0300 ERROR rollback
+2024-04-15T15:29:47.849519+0300 DEBUG Added session 80b7b39801da814e
+2024-04-15T15:30:01.616911+0300 ERROR rollback
+2024-04-15T15:30:01.635582+0300 DEBUG Added session 6d0e9e457f678875
+2024-04-16T13:23:28.414907+0300 INFO rollback
+2024-04-16T13:23:28.448657+0300 DEBUG Added session 4d80913d54da5ef9
+2024-04-16T13:23:31.734983+0300 INFO rollback
+2024-04-16T13:23:44.160210+0300 INFO Starting server...
+2024-04-16T13:27:09.232006+0300 INFO mode
+2024-04-16T13:27:09.658233+0300 INFO Starting server...
+2024-04-16T13:27:24.009109+0300 INFO None
+2024-04-16T13:27:24.387159+0300 INFO Starting server...
+2024-04-16T13:27:48.020573+0300 INFO dev
+2024-04-16T13:27:48.319955+0300 INFO Starting server...
+2024-04-16T13:27:59.681950+0300 INFO dev
+2024-04-16T13:28:25.680069+0300 INFO dev
+2024-04-16T13:28:26.000280+0300 INFO Starting server...
+2024-04-16T13:28:35.169457+0300 INFO dev
+2024-04-16T13:28:35.528102+0300 INFO Starting server...
+2024-04-16T13:28:50.036804+0300 INFO test
+2024-04-16T13:28:58.947838+0300 INFO rollback
+2024-04-16T13:28:58.948330+0300 ERROR unexpected connection_lost() call
+[33m[1mTraceback (most recent call last):[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\anyio\streams\memory.py", line 97, in receive
+    return self.receive_nowait()
+           │    └ <function MemoryObjectReceiveStream.receive_nowait at 0x0000013EB52F54E0>
+           └ MemoryObjectReceiveStream(_state=MemoryObjectStreamState(max_buffer_size=0, buffer=deque([]), open_send_channels=0, open_rece...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\anyio\streams\memory.py", line 92, in receive_nowait
+    raise WouldBlock
+          └ <class 'anyio.WouldBlock'>
+
+[31m[1manyio.WouldBlock[0m
+
+
+[1mDuring handling of the above exception, another exception occurred:[0m
+
+
+[33m[1mTraceback (most recent call last):[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    message = await recv_stream.receive()
+                    │           └ <function MemoryObjectReceiveStream.receive at 0x0000013EB52F5580>
+                    └ MemoryObjectReceiveStream(_state=MemoryObjectStreamState(max_buffer_size=0, buffer=deque([]), open_send_channels=0, open_rece...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\anyio\streams\memory.py", line 112, in receive
+    raise EndOfStream
+          └ <class 'anyio.EndOfStream'>
+
+[31m[1manyio.EndOfStream[0m
+
+
+[1mDuring handling of the above exception, another exception occurred:[0m
+
+
+[33m[1mTraceback (most recent call last):[0m
+
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+    │       └ <Command main>
+    └ <module 'uvicorn' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\venv\\Lib\\site-packages\\uvicorn\\__init__.py'>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\click\core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           │    │     │       └ {}
+           │    │     └ ()
+           │    └ <function BaseCommand.main at 0x0000013EB5124220>
+           └ <Command main>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\click\core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         │    │      └ <click.core.Context object at 0x0000013EB30A50D0>
+         │    └ <function Command.invoke at 0x0000013EB5124E00>
+         └ <Command main>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\click\core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           │   │      │    │           │   └ {'port': 80, 'app': 'src.main:app', 'host': '127.0.0.1', 'uds': None, 'fd': None, 'reload': False, 'reload_dirs': (), 'reload...
+           │   │      │    │           └ <click.core.Context object at 0x0000013EB30A50D0>
+           │   │      │    └ <function main at 0x0000013EB5315B20>
+           │   │      └ <Command main>
+           │   └ <function Context.invoke at 0x0000013EB510F740>
+           └ <click.core.Context object at 0x0000013EB30A50D0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\click\core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+                       │       └ {'port': 80, 'app': 'src.main:app', 'host': '127.0.0.1', 'uds': None, 'fd': None, 'reload': False, 'reload_dirs': (), 'reload...
+                       └ ()
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\uvicorn\main.py", line 409, in main
+    run(
+    └ <function run at 0x0000013EB5192200>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\uvicorn\main.py", line 575, in run
+    server.run()
+    │      └ <function Server.run at 0x0000013EB51DA0C0>
+    └ <uvicorn.server.Server object at 0x0000013EB51734D0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ None
+           │       │   │    └ <function Server.serve at 0x0000013EB51DA160>
+           │       │   └ <uvicorn.server.Server object at 0x0000013EB51734D0>
+           │       └ <function run at 0x0000013EB4AF79C0>
+           └ <module 'asyncio' from 'C:\\Users\\PATHFIND3R\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\__init__.py'>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x0000013EB5304B80>
+           │      └ <function Runner.run at 0x0000013EB4F38D60>
+           └ <asyncio.runners.Runner object at 0x0000013EB5323A10>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-pa...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000013EB4F368E0>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000013EB5323A10>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x0000013EB4FA3E20>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000013EB4F38680>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000013EB4AA8CC0>
+    └ <Handle Task.task_wakeup(<Future finished result=True>)>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=True>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=True>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=True>)>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x0000013EB5321E10>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 69, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000013EB8...
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000013...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+                 │    └ <fastapi.applications.FastAPI object at 0x0000013EB54E9190>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x0000013EB5321E10>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000013EB8...
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000013...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000013EB8...
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000013...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x0000013EB86A9190>
+          └ <fastapi.applications.FastAPI object at 0x0000013EB54E9190>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x0000013EB86C11C0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000013...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │    └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x0000013EB8677150>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x0000013EB86A9190>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+                     │    │             │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next at 0x0000013EB86C1120>
+                     │    │             └ <starlette.middleware.base._CachedRequest object at 0x0000013EB86CEB10>
+                     │    └ <function catch_exceptions at 0x0000013EB86C1760>
+                     └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x0000013EB8677150>
+
+> File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\src\[0m[32m[1mmain.py[0m", line [33m18[0m, in [35mcatch_exceptions[0m
+    [35m[1mreturn[0m [35m[1mawait[0m [1mcall_next[0m[1m([0m[1mrequest[0m[1m)[0m
+    [36m             │         └ [0m[36m[1m<starlette.middleware.base._CachedRequest object at 0x0000013EB86CEB10>[0m
+    [36m             └ [0m[36m[1m<function BaseHTTPMiddleware.__call__.<locals>.call_next at 0x0000013EB86C1120>[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\base.py", line 165, in call_next
+    raise app_exc
+          └ ConnectionError('unexpected connection_lost() call')
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+          │    │   │      │                      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x0000013EB8712F20>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000013EB867CA40>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000013EB8677390>
+          └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x0000013EB8677150>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x0000013EB8712F20>
+          │                            │    │    │     │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000013EB867CA40>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │                            │    │    └ <starlette.requests.Request object at 0x0000013EB86CF450>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x0000013EB54E4050>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000013EB8677390>
+          └ <function wrap_app_handling_exceptions at 0x0000013EB73645E0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000013EB8719120>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000013EB867CA40>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          └ <fastapi.routing.APIRouter object at 0x0000013EB54E4050>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 758, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000013EB8719120>
+          │    │                │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000013EB867CA40>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x0000013EB54E4050>>
+          └ <fastapi.routing.APIRouter object at 0x0000013EB54E4050>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 778, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000013EB8719120>
+          │     │      │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000013EB867CA40>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │     └ <function Route.handle at 0x0000013EB7365C60>
+          └ APIRoute(path='/auth/login', name='authentication', methods=['POST'])
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 299, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000013EB8719120>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000013EB867CA40>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │    └ <function request_response.<locals>.app at 0x0000013EB86C1B20>
+          └ APIRoute(path='/auth/login', name='authentication', methods=['POST'])
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 79, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000013EB8719120>
+          │                            │    │        │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000013EB867CA40>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │                            │    └ <starlette.requests.Request object at 0x0000013EB76BF490>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x0000013EB87191C0>
+          └ <function wrap_app_handling_exceptions at 0x0000013EB73645E0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000013EB8719300>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000013EB867CA40>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          └ <function request_response.<locals>.app.<locals>.app at 0x0000013EB87191C0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 74, in app
+    response = await func(request)
+                     │    └ <starlette.requests.Request object at 0x0000013EB76BF490>
+                     └ <function get_request_handler.<locals>.app at 0x0000013EB86C1BC0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\fastapi\routing.py", line 269, in app
+    solved_result = await solve_dependencies(
+                          └ <function solve_dependencies at 0x0000013EB7341EE0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\fastapi\dependencies\utils.py", line 598, in solve_dependencies
+    solved = await call(**sub_values)
+                   │      └ {'userdata': <fastapi.security.oauth2.OAuth2PasswordRequestForm object at 0x0000013EB871CAD0>, 'user_service': <src.services....
+                   └ <function check_user at 0x0000013EB741D940>
+
+  File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\src\auth\[0m[32m[1mrouter.py[0m", line [33m20[0m, in [35mcheck_user[0m
+    [1muser[0m[1m:[0m [1mUserSchema[0m [35m[1m=[0m [35m[1mawait[0m [1muser_service[0m[35m[1m.[0m[1mget_user[0m[1m([0m[1muserdata[0m[35m[1m.[0m[1musername[0m[1m)[0m
+    [36m                         │            │        │        └ [0m[36m[1m'vlados'[0m
+    [36m                         │            │        └ [0m[36m[1m<fastapi.security.oauth2.OAuth2PasswordRequestForm object at 0x0000013EB871CAD0>[0m
+    [36m                         │            └ [0m[36m[1m<function UserService.get_user at 0x0000013EB7768680>[0m
+    [36m                         └ [0m[36m[1m<src.services.user_service.UserService object at 0x0000013EB871CBD0>[0m
+
+  File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\src\services\[0m[32m[1muser_service.py[0m", line [33m11[0m, in [35mget_user[0m
+    [1mres[0m [35m[1m=[0m [35m[1mawait[0m [1mself[0m[35m[1m.[0m[1muow[0m[35m[1m.[0m[1muser_repos[0m[35m[1m.[0m[1mget_by_username[0m[1m([0m[1musername[0m[1m)[0m
+    [36m            │    │   │          │               └ [0m[36m[1m'vlados'[0m
+    [36m            │    │   │          └ [0m[36m[1m<function Repository.get_by_username at 0x0000013EB843AB60>[0m
+    [36m            │    │   └ [0m[36m[1m<src.repositories.user_repository.UserRepository object at 0x0000013EB8482E90>[0m
+    [36m            │    └ [0m[36m[1m<src.utils.uow.UnitOfWork object at 0x0000013EB871CC50>[0m
+    [36m            └ [0m[36m[1m<src.services.user_service.UserService object at 0x0000013EB871CBD0>[0m
+
+  File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\src\repositories\[0m[32m[1mbase_repository.py[0m", line [33m26[0m, in [35mget_by_username[0m
+    [1mresult[0m [35m[1m=[0m [35m[1mawait[0m [1mself[0m[35m[1m.[0m[1msession[0m[35m[1m.[0m[1mexecute[0m[1m([0m[1mstmt[0m[1m)[0m
+    [36m               │    │       │       └ [0m[36m[1m<sqlalchemy.sql.selectable.Select object at 0x0000013EB83DD910>[0m
+    [36m               │    │       └ [0m[36m[1m<function AsyncSession.execute at 0x0000013EB8231260>[0m
+    [36m               │    └ [0m[36m[1m<sqlalchemy.ext.asyncio.session.AsyncSession object at 0x0000013EB8482F90>[0m
+    [36m               └ [0m[36m[1m<src.repositories.user_repository.UserRepository object at 0x0000013EB8482E90>[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+                   └ <function greenlet_spawn at 0x0000013EB7872700>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             │       │      │   └ <built-in function exc_info>
+             │       │      └ <module 'sys' (built-in)>
+             │       └ <method 'throw' of 'greenlet.greenlet' objects>
+             └ <_AsyncIoGreenlet object at 0x0000013EB871C9C0 (otid=0x0000013EB78315F0) dead>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2306, in execute
+    return self._execute_internal(
+           │    └ <function Session._execute_internal at 0x0000013EB81456C0>
+           └ <sqlalchemy.orm.session.Session object at 0x0000013EB869D650>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2181, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           │    │                    └ Engine(postgresql+asyncpg://postgres:***@localhost:5433/tasks)
+           │    └ <function Session._connection_for_bind at 0x0000013EB8145440>
+           └ <sqlalchemy.orm.session.Session object at 0x0000013EB869D650>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2050, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           │     │                    │       └ None
+           │     │                    └ Engine(postgresql+asyncpg://postgres:***@localhost:5433/tasks)
+           │     └ <function SessionTransaction._connection_for_bind at 0x0000013EB8133EC0>
+           └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000013EB870EC10>
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {}
+                │  │      └ (Engine(postgresql+asyncpg://postgres:***@localhost:5433/tasks), None)
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000013EB870EC10>
+                └ <function SessionTransaction._connection_for_bind at 0x0000013EB8133CE0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1144, in _connection_for_bind
+    conn = bind.connect()
+           │    └ <function Engine.connect at 0x0000013EB7D5F2E0>
+           └ Engine(postgresql+asyncpg://postgres:***@localhost:5433/tasks)
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3280, in connect
+    return self._connection_cls(self)
+           │    │               └ Engine(postgresql+asyncpg://postgres:***@localhost:5433/tasks)
+           │    └ <class 'sqlalchemy.engine.base.Connection'>
+           └ Engine(postgresql+asyncpg://postgres:***@localhost:5433/tasks)
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+    │                        │      └ <function Engine.raw_connection at 0x0000013EB7D5F380>
+    │                        └ Engine(postgresql+asyncpg://postgres:***@localhost:5433/tasks)
+    └ <sqlalchemy.engine.base.Connection object at 0x0000013EB871D950>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3304, in raw_connection
+    return self.pool.connect()
+           │    │    └ <function Pool.connect at 0x0000013EB7915800>
+           │    └ <sqlalchemy.pool.impl.AsyncAdaptedQueuePool object at 0x0000013EB83DD0D0>
+           └ Engine(postgresql+asyncpg://postgres:***@localhost:5433/tasks)
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           │                │         └ <sqlalchemy.pool.impl.AsyncAdaptedQueuePool object at 0x0000013EB83DD0D0>
+           │                └ <classmethod(<function _ConnectionFairy._checkout at 0x0000013EB7917880>)>
+           └ <class 'sqlalchemy.pool.base._ConnectionFairy'>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            │                 │        └ <sqlalchemy.pool.impl.AsyncAdaptedQueuePool object at 0x0000013EB83DD0D0>
+            │                 └ <classmethod(<function _ConnectionRecord.checkout at 0x0000013EB79163E0>)>
+            └ <class 'sqlalchemy.pool.base._ConnectionRecord'>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+          │    └ <function QueuePool._do_get at 0x0000013EB7923060>
+          └ <sqlalchemy.pool.impl.AsyncAdaptedQueuePool object at 0x0000013EB83DD0D0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\venv\\Lib\\site-packages\\sqlalchemy\\u...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x0000013EB871EB00>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ ConnectionError('unexpected connection_lost() call')
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           │    └ <function Pool._create_connection at 0x0000013EB7915580>
+           └ <sqlalchemy.pool.impl.AsyncAdaptedQueuePool object at 0x0000013EB83DD0D0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           │                 └ <sqlalchemy.pool.impl.AsyncAdaptedQueuePool object at 0x0000013EB83DD0D0>
+           └ <class 'sqlalchemy.pool.base._ConnectionRecord'>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000013EB8635160>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\venv\\Lib\\site-packages\\sqlalchemy\\u...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x0000013EB871DC00>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ ConnectionError('unexpected connection_lost() call')
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+    │    │                               │    │               └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000013EB8635160>
+    │    │                               │    └ <function create_engine.<locals>.connect at 0x0000013EB8237100>
+    │    │                               └ <sqlalchemy.pool.impl.AsyncAdaptedQueuePool object at 0x0000013EB83DD0D0>
+    │    └ <member 'dbapi_connection' of '_ConnectionRecord' objects>
+    └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000013EB8635160>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           │       │        │        └ {'host': 'localhost', 'database': 'tasks', 'user': 'postgres', 'password': 'admin', 'port': 5433}
+           │       │        └ []
+           │       └ <function DefaultDialect.connect at 0x0000013EB7E0ADE0>
+           └ <sqlalchemy.dialects.postgresql.asyncpg.PGDialect_asyncpg object at 0x0000013EB823A810>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 617, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           │    │            │        │        └ {'host': 'localhost', 'database': 'tasks', 'user': 'postgres', 'password': 'admin', 'port': 5433}
+           │    │            │        └ ()
+           │    │            └ <function AsyncAdapt_asyncpg_dbapi.connect at 0x0000013EB834BD80>
+           │    └ <sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi object at 0x0000013EB8223C10>
+           └ <sqlalchemy.dialects.postgresql.asyncpg.PGDialect_asyncpg object at 0x0000013EB823A810>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 937, in connect
+    await_only(creator_fn(*arg, **kw)),
+    │          │           │      └ {'host': 'localhost', 'database': 'tasks', 'user': 'postgres', 'password': 'admin', 'port': 5433}
+    │          │           └ ()
+    │          └ <function connect at 0x0000013EB8381800>
+    └ <function await_only at 0x0000013EB78420C0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 131, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+           │                     └ <coroutine object connect at 0x0000013EB8694940>
+           └ <_AsyncIoGreenlet object at 0x0000013EB871C9C0 (otid=0x0000013EB78315F0) dead>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+                  └ <coroutine object connect at 0x0000013EB8694940>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\asyncpg\connection.py", line 2329, in connect
+    return await connect_utils._connect(
+                 │             └ <function _connect at 0x0000013EB840D260>
+                 └ <module 'asyncpg.connect_utils' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\venv\\Lib\\site-packages\\asyncpg...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\asyncpg\connect_utils.py", line 1017, in _connect
+    raise last_error or exceptions.TargetServerAttributeNotMatched(
+          │             │          └ <class 'asyncpg.exceptions._base.TargetServerAttributeNotMatched'>
+          │             └ <module 'asyncpg.exceptions' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\venv\\Lib\\site-packages\\asyncpg\\e...
+          └ ConnectionError('unexpected connection_lost() call')
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\asyncpg\connect_utils.py", line 991, in _connect
+    conn = await _connect_addr(
+                 └ <function _connect_addr at 0x0000013EB840CB80>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\asyncpg\connect_utils.py", line 828, in _connect_addr
+    return await __connect_addr(params, True, *args)
+                 │              │              └ (('localhost', 5433), <ProactorEventLoop running=True closed=False debug=False>, ConnectionConfiguration(command_timeout=None...
+                 │              └ ConnectionParameters(user='postgres', password='admin', database='tasks', ssl=<ssl.SSLContext object at 0x0000013EB85B29F0>, ...
+                 └ <function __connect_addr at 0x0000013EB840CC20>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\asyncpg\connect_utils.py", line 873, in __connect_addr
+    tr, pr = await connector
+                   └ <coroutine object _create_ssl_connection at 0x0000013EB57D3610>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\asyncpg\connect_utils.py", line 752, in _create_ssl_connection
+    do_ssl_upgrade = await pr.on_data
+                           │  └ <Future finished exception=ConnectionError('unexpected connection_lost() call')>
+                           └ <asyncpg.connect_utils.TLSUpgradeProto object at 0x0000013EB773F650>
+
+[31m[1mConnectionError[0m:[1m unexpected connection_lost() call[0m
+2024-04-16T13:30:56.920188+0300 INFO rollback
+2024-04-16T13:30:56.921395+0300 ERROR database "tasks" does not exist
+[33m[1mTraceback (most recent call last):[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\anyio\streams\memory.py", line 97, in receive
+    return self.receive_nowait()
+           │    └ <function MemoryObjectReceiveStream.receive_nowait at 0x0000013EB52F54E0>
+           └ MemoryObjectReceiveStream(_state=MemoryObjectStreamState(max_buffer_size=0, buffer=deque([]), open_send_channels=0, open_rece...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\anyio\streams\memory.py", line 92, in receive_nowait
+    raise WouldBlock
+          └ <class 'anyio.WouldBlock'>
+
+[31m[1manyio.WouldBlock[0m
+
+
+[1mDuring handling of the above exception, another exception occurred:[0m
+
+
+[33m[1mTraceback (most recent call last):[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    message = await recv_stream.receive()
+                    │           └ <function MemoryObjectReceiveStream.receive at 0x0000013EB52F5580>
+                    └ MemoryObjectReceiveStream(_state=MemoryObjectStreamState(max_buffer_size=0, buffer=deque([]), open_send_channels=0, open_rece...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\anyio\streams\memory.py", line 112, in receive
+    raise EndOfStream
+          └ <class 'anyio.EndOfStream'>
+
+[31m[1manyio.EndOfStream[0m
+
+
+[1mDuring handling of the above exception, another exception occurred:[0m
+
+
+[33m[1mTraceback (most recent call last):[0m
+
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\uvicorn\__main__.py", line 4, in <module>
+    uvicorn.main()
+    │       └ <Command main>
+    └ <module 'uvicorn' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\venv\\Lib\\site-packages\\uvicorn\\__init__.py'>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\click\core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           │    │     │       └ {}
+           │    │     └ ()
+           │    └ <function BaseCommand.main at 0x0000013EB5124220>
+           └ <Command main>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\click\core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         │    │      └ <click.core.Context object at 0x0000013EB30A50D0>
+         │    └ <function Command.invoke at 0x0000013EB5124E00>
+         └ <Command main>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\click\core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           │   │      │    │           │   └ {'port': 80, 'app': 'src.main:app', 'host': '127.0.0.1', 'uds': None, 'fd': None, 'reload': False, 'reload_dirs': (), 'reload...
+           │   │      │    │           └ <click.core.Context object at 0x0000013EB30A50D0>
+           │   │      │    └ <function main at 0x0000013EB5315B20>
+           │   │      └ <Command main>
+           │   └ <function Context.invoke at 0x0000013EB510F740>
+           └ <click.core.Context object at 0x0000013EB30A50D0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\click\core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+                       │       └ {'port': 80, 'app': 'src.main:app', 'host': '127.0.0.1', 'uds': None, 'fd': None, 'reload': False, 'reload_dirs': (), 'reload...
+                       └ ()
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\uvicorn\main.py", line 409, in main
+    run(
+    └ <function run at 0x0000013EB5192200>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\uvicorn\main.py", line 575, in run
+    server.run()
+    │      └ <function Server.run at 0x0000013EB51DA0C0>
+    └ <uvicorn.server.Server object at 0x0000013EB51734D0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\uvicorn\server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ None
+           │       │   │    └ <function Server.serve at 0x0000013EB51DA160>
+           │       │   └ <uvicorn.server.Server object at 0x0000013EB51734D0>
+           │       └ <function run at 0x0000013EB4AF79C0>
+           └ <module 'asyncio' from 'C:\\Users\\PATHFIND3R\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\asyncio\\__init__.py'>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           │      │   └ <coroutine object Server.serve at 0x0000013EB5304B80>
+           │      └ <function Runner.run at 0x0000013EB4F38D60>
+           └ <asyncio.runners.Runner object at 0x0000013EB5323A10>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           │    │     │                  └ <Task pending name='Task-1' coro=<Server.serve() running at C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-pa...
+           │    │     └ <function BaseEventLoop.run_until_complete at 0x0000013EB4F368E0>
+           │    └ <ProactorEventLoop running=True closed=False debug=False>
+           └ <asyncio.runners.Runner object at 0x0000013EB5323A10>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x0000013EB4FA3E20>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x0000013EB4F38680>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x0000013EB4AA8CC0>
+    └ <Handle Task.task_wakeup(<Future finished result=True>)>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=True>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=True>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=True>)>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 411, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x0000013EB5321E10>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 69, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000013EB8...
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000013...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+                 │    └ <fastapi.applications.FastAPI object at 0x0000013EB54E9190>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x0000013EB5321E10>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000013EB8...
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000013...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000013EB8...
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000013...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x0000013EB86A9190>
+          └ <fastapi.applications.FastAPI object at 0x0000013EB54E9190>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x0000013EB8718F40>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x0000013...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │    └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x0000013EB8677150>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x0000013EB86A9190>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+                     │    │             │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next at 0x0000013EB871B060>
+                     │    │             └ <starlette.middleware.base._CachedRequest object at 0x0000013EB871F990>
+                     │    └ <function catch_exceptions at 0x0000013EB86C1760>
+                     └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x0000013EB8677150>
+
+> File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\src\[0m[32m[1mmain.py[0m", line [33m18[0m, in [35mcatch_exceptions[0m
+    [35m[1mreturn[0m [35m[1mawait[0m [1mcall_next[0m[1m([0m[1mrequest[0m[1m)[0m
+    [36m             │         └ [0m[36m[1m<starlette.middleware.base._CachedRequest object at 0x0000013EB871F990>[0m
+    [36m             └ [0m[36m[1m<function BaseHTTPMiddleware.__call__.<locals>.call_next at 0x0000013EB871B060>[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\base.py", line 165, in call_next
+    raise app_exc
+          └ InvalidCatalogNameError('database "tasks" does not exist')
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+          │    │   │      │                      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x0000013EB8AC27A0>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000013EB8718FE0>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000013EB8677390>
+          └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x0000013EB8677150>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x0000013EB8AC27A0>
+          │                            │    │    │     │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000013EB8718FE0>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │                            │    │    └ <starlette.requests.Request object at 0x0000013EB8DE7FD0>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x0000013EB54E4050>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x0000013EB8677390>
+          └ <function wrap_app_handling_exceptions at 0x0000013EB73645E0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000013EB8AC2AC0>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000013EB8718FE0>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          └ <fastapi.routing.APIRouter object at 0x0000013EB54E4050>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 758, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000013EB8AC2AC0>
+          │    │                │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000013EB8718FE0>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x0000013EB54E4050>>
+          └ <fastapi.routing.APIRouter object at 0x0000013EB54E4050>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 778, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000013EB8AC2AC0>
+          │     │      │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000013EB8718FE0>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │     └ <function Route.handle at 0x0000013EB7365C60>
+          └ APIRoute(path='/auth/login', name='authentication', methods=['POST'])
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 299, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000013EB8AC2AC0>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000013EB8718FE0>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │    └ <function request_response.<locals>.app at 0x0000013EB86C1B20>
+          └ APIRoute(path='/auth/login', name='authentication', methods=['POST'])
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 79, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000013EB8AC2AC0>
+          │                            │    │        │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000013EB8718FE0>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          │                            │    └ <starlette.requests.Request object at 0x0000013EB8DE7510>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x0000013EB8AC2B60>
+          └ <function wrap_app_handling_exceptions at 0x0000013EB73645E0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x0000013EB8AC2CA0>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x0000013EB8718FE0>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 80), 'clie...
+          └ <function request_response.<locals>.app.<locals>.app at 0x0000013EB8AC2B60>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 74, in app
+    response = await func(request)
+                     │    └ <starlette.requests.Request object at 0x0000013EB8DE7510>
+                     └ <function get_request_handler.<locals>.app at 0x0000013EB86C1BC0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\fastapi\routing.py", line 269, in app
+    solved_result = await solve_dependencies(
+                          └ <function solve_dependencies at 0x0000013EB7341EE0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\fastapi\dependencies\utils.py", line 598, in solve_dependencies
+    solved = await call(**sub_values)
+                   │      └ {'userdata': <fastapi.security.oauth2.OAuth2PasswordRequestForm object at 0x0000013EB871C810>, 'user_service': <src.services....
+                   └ <function check_user at 0x0000013EB741D940>
+
+  File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\src\auth\[0m[32m[1mrouter.py[0m", line [33m20[0m, in [35mcheck_user[0m
+    [1muser[0m[1m:[0m [1mUserSchema[0m [35m[1m=[0m [35m[1mawait[0m [1muser_service[0m[35m[1m.[0m[1mget_user[0m[1m([0m[1muserdata[0m[35m[1m.[0m[1musername[0m[1m)[0m
+    [36m                         │            │        │        └ [0m[36m[1m'vlados'[0m
+    [36m                         │            │        └ [0m[36m[1m<fastapi.security.oauth2.OAuth2PasswordRequestForm object at 0x0000013EB871C810>[0m
+    [36m                         │            └ [0m[36m[1m<function UserService.get_user at 0x0000013EB7768680>[0m
+    [36m                         └ [0m[36m[1m<src.services.user_service.UserService object at 0x0000013EB8E18D50>[0m
+
+  File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\src\services\[0m[32m[1muser_service.py[0m", line [33m11[0m, in [35mget_user[0m
+    [1mres[0m [35m[1m=[0m [35m[1mawait[0m [1mself[0m[35m[1m.[0m[1muow[0m[35m[1m.[0m[1muser_repos[0m[35m[1m.[0m[1mget_by_username[0m[1m([0m[1musername[0m[1m)[0m
+    [36m            │    │   │          │               └ [0m[36m[1m'vlados'[0m
+    [36m            │    │   │          └ [0m[36m[1m<function Repository.get_by_username at 0x0000013EB843AB60>[0m
+    [36m            │    │   └ [0m[36m[1m<src.repositories.user_repository.UserRepository object at 0x0000013EB8E19590>[0m
+    [36m            │    └ [0m[36m[1m<src.utils.uow.UnitOfWork object at 0x0000013EB8E187D0>[0m
+    [36m            └ [0m[36m[1m<src.services.user_service.UserService object at 0x0000013EB8E18D50>[0m
+
+  File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\src\repositories\[0m[32m[1mbase_repository.py[0m", line [33m26[0m, in [35mget_by_username[0m
+    [1mresult[0m [35m[1m=[0m [35m[1mawait[0m [1mself[0m[35m[1m.[0m[1msession[0m[35m[1m.[0m[1mexecute[0m[1m([0m[1mstmt[0m[1m)[0m
+    [36m               │    │       │       └ [0m[36m[1m<sqlalchemy.sql.selectable.Select object at 0x0000013EB871F450>[0m
+    [36m               │    │       └ [0m[36m[1m<function AsyncSession.execute at 0x0000013EB8231260>[0m
+    [36m               │    └ [0m[36m[1m<sqlalchemy.ext.asyncio.session.AsyncSession object at 0x0000013EB871CA90>[0m
+    [36m               └ [0m[36m[1m<src.repositories.user_repository.UserRepository object at 0x0000013EB8E19590>[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+                   └ <function greenlet_spawn at 0x0000013EB7872700>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             │       │      │   └ <built-in function exc_info>
+             │       │      └ <module 'sys' (built-in)>
+             │       └ <method 'throw' of 'greenlet.greenlet' objects>
+             └ <_AsyncIoGreenlet object at 0x0000013EB8E19900 (otid=0x0000013EB78315F0) dead>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2306, in execute
+    return self._execute_internal(
+           │    └ <function Session._execute_internal at 0x0000013EB81456C0>
+           └ <sqlalchemy.orm.session.Session object at 0x0000013EB8E186D0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2181, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           │    │                    └ Engine(postgresql+asyncpg://postgres:***@localhost:5433/tasks)
+           │    └ <function Session._connection_for_bind at 0x0000013EB8145440>
+           └ <sqlalchemy.orm.session.Session object at 0x0000013EB8E186D0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2050, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           │     │                    │       └ None
+           │     │                    └ Engine(postgresql+asyncpg://postgres:***@localhost:5433/tasks)
+           │     └ <function SessionTransaction._connection_for_bind at 0x0000013EB8133EC0>
+           └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000013EB8C33430>
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                │  │      │      └ {}
+                │  │      └ (Engine(postgresql+asyncpg://postgres:***@localhost:5433/tasks), None)
+                │  └ <sqlalchemy.orm.session.SessionTransaction object at 0x0000013EB8C33430>
+                └ <function SessionTransaction._connection_for_bind at 0x0000013EB8133CE0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1144, in _connection_for_bind
+    conn = bind.connect()
+           │    └ <function Engine.connect at 0x0000013EB7D5F2E0>
+           └ Engine(postgresql+asyncpg://postgres:***@localhost:5433/tasks)
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3280, in connect
+    return self._connection_cls(self)
+           │    │               └ Engine(postgresql+asyncpg://postgres:***@localhost:5433/tasks)
+           │    └ <class 'sqlalchemy.engine.base.Connection'>
+           └ Engine(postgresql+asyncpg://postgres:***@localhost:5433/tasks)
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
+    self._dbapi_connection = engine.raw_connection()
+    │                        │      └ <function Engine.raw_connection at 0x0000013EB7D5F380>
+    │                        └ Engine(postgresql+asyncpg://postgres:***@localhost:5433/tasks)
+    └ <sqlalchemy.engine.base.Connection object at 0x0000013EB8E19C10>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3304, in raw_connection
+    return self.pool.connect()
+           │    │    └ <function Pool.connect at 0x0000013EB7915800>
+           │    └ <sqlalchemy.pool.impl.AsyncAdaptedQueuePool object at 0x0000013EB83DD0D0>
+           └ Engine(postgresql+asyncpg://postgres:***@localhost:5433/tasks)
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+           │                │         └ <sqlalchemy.pool.impl.AsyncAdaptedQueuePool object at 0x0000013EB83DD0D0>
+           │                └ <classmethod(<function _ConnectionFairy._checkout at 0x0000013EB7917880>)>
+           └ <class 'sqlalchemy.pool.base._ConnectionFairy'>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            │                 │        └ <sqlalchemy.pool.impl.AsyncAdaptedQueuePool object at 0x0000013EB83DD0D0>
+            │                 └ <classmethod(<function _ConnectionRecord.checkout at 0x0000013EB79163E0>)>
+            └ <class 'sqlalchemy.pool.base._ConnectionRecord'>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+          │    └ <function QueuePool._do_get at 0x0000013EB7923060>
+          └ <sqlalchemy.pool.impl.AsyncAdaptedQueuePool object at 0x0000013EB83DD0D0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\venv\\Lib\\site-packages\\sqlalchemy\\u...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x0000013EB8E1A540>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ InvalidCatalogNameError('database "tasks" does not exist')
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+           │    └ <function Pool._create_connection at 0x0000013EB7915580>
+           └ <sqlalchemy.pool.impl.AsyncAdaptedQueuePool object at 0x0000013EB83DD0D0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+           │                 └ <sqlalchemy.pool.impl.AsyncAdaptedQueuePool object at 0x0000013EB83DD0D0>
+           └ <class 'sqlalchemy.pool.base._ConnectionRecord'>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+    └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000013EB86351D0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+         │    └ <class 'sqlalchemy.util.langhelpers.safe_reraise'>
+         └ <module 'sqlalchemy.util' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\venv\\Lib\\site-packages\\sqlalchemy\\u...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+          │         │              └ <traceback object at 0x0000013EB8E1A480>
+          │         └ <method 'with_traceback' of 'BaseException' objects>
+          └ InvalidCatalogNameError('database "tasks" does not exist')
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+    │    │                               │    │               └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000013EB86351D0>
+    │    │                               │    └ <function create_engine.<locals>.connect at 0x0000013EB8237100>
+    │    │                               └ <sqlalchemy.pool.impl.AsyncAdaptedQueuePool object at 0x0000013EB83DD0D0>
+    │    └ <member 'dbapi_connection' of '_ConnectionRecord' objects>
+    └ <sqlalchemy.pool.base._ConnectionRecord object at 0x0000013EB86351D0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+           │       │        │        └ {'host': 'localhost', 'database': 'tasks', 'user': 'postgres', 'password': 'admin', 'port': 5433}
+           │       │        └ []
+           │       └ <function DefaultDialect.connect at 0x0000013EB7E0ADE0>
+           └ <sqlalchemy.dialects.postgresql.asyncpg.PGDialect_asyncpg object at 0x0000013EB823A810>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 617, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+           │    │            │        │        └ {'host': 'localhost', 'database': 'tasks', 'user': 'postgres', 'password': 'admin', 'port': 5433}
+           │    │            │        └ ()
+           │    │            └ <function AsyncAdapt_asyncpg_dbapi.connect at 0x0000013EB834BD80>
+           │    └ <sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi object at 0x0000013EB8223C10>
+           └ <sqlalchemy.dialects.postgresql.asyncpg.PGDialect_asyncpg object at 0x0000013EB823A810>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 937, in connect
+    await_only(creator_fn(*arg, **kw)),
+    │          │           │      └ {'host': 'localhost', 'database': 'tasks', 'user': 'postgres', 'password': 'admin', 'port': 5433}
+    │          │           └ ()
+    │          └ <function connect at 0x0000013EB8381800>
+    └ <function await_only at 0x0000013EB78420C0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 131, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+           │                     └ <coroutine object connect at 0x0000013EB86950C0>
+           └ <_AsyncIoGreenlet object at 0x0000013EB8E19900 (otid=0x0000013EB78315F0) dead>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+                  └ <coroutine object connect at 0x0000013EB86950C0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\asyncpg\connection.py", line 2329, in connect
+    return await connect_utils._connect(
+                 │             └ <function _connect at 0x0000013EB840D260>
+                 └ <module 'asyncpg.connect_utils' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\venv\\Lib\\site-packages\\asyncpg...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\asyncpg\connect_utils.py", line 991, in _connect
+    conn = await _connect_addr(
+                 └ <function _connect_addr at 0x0000013EB840CB80>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\asyncpg\connect_utils.py", line 828, in _connect_addr
+    return await __connect_addr(params, True, *args)
+                 │              │              └ (('localhost', 5433), <ProactorEventLoop running=True closed=False debug=False>, ConnectionConfiguration(command_timeout=None...
+                 │              └ ConnectionParameters(user='postgres', password='admin', database='tasks', ssl=<ssl.SSLContext object at 0x0000013EB85B2600>, ...
+                 └ <function __connect_addr at 0x0000013EB840CC20>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\asyncpg\connect_utils.py", line 876, in __connect_addr
+    await connected
+          └ <Future finished exception=InvalidCatalogNameError('database "tasks" does not exist')>
+
+[31m[1masyncpg.exceptions.InvalidCatalogNameError[0m:[1m database "tasks" does not exist[0m
+2024-04-16T13:39:38.079056+0300 INFO dev
+2024-04-16T13:40:33.482528+0300 INFO dev
+2024-04-16T13:42:08.394169+0300 INFO dev
+2024-04-16T13:44:13.493715+0300 INFO dev
+2024-04-16T13:44:36.898275+0300 INFO dev
+2024-04-16T13:44:57.138215+0300 INFO dev
+2024-04-16T13:46:25.353319+0300 INFO dev
+2024-04-16T13:46:30.803737+0300 INFO dev
+2024-04-16T13:47:52.553675+0300 INFO dev
+2024-04-16T13:47:53.060110+0300 INFO rollback
+2024-04-16T13:48:06.484978+0300 INFO dev
+2024-04-16T13:48:06.909793+0300 INFO rollback
+2024-04-16T13:49:11.617935+0300 INFO dev
+2024-04-16T13:49:11.974811+0300 INFO rollback
+2024-04-16T13:49:11.986409+0300 INFO rollback
+2024-04-16T13:49:12.008357+0300 DEBUG Added session a650cf921442ba41
+2024-04-16T13:49:12.018554+0300 DEBUG Added session 9df02a0ab6b859fe
+2024-04-16T13:49:12.019553+0300 DEBUG Tokens updated successfully!
+2024-04-16T13:49:12.030832+0300 DEBUG Added session 6f16a6a672fcc829
+2024-04-16T13:49:12.030832+0300 DEBUG Tokens updated successfully!
+2024-04-16T13:49:43.846414+0300 INFO dev
+2024-04-16T13:49:44.251144+0300 INFO rollback
+2024-04-16T13:49:44.262142+0300 INFO rollback
+2024-04-16T13:49:44.280720+0300 DEBUG Added session a5f0c79583e56976
+2024-04-16T13:49:44.287533+0300 DEBUG Added session 323d90d81cf4969e
+2024-04-16T13:49:44.288541+0300 DEBUG Tokens updated successfully!
+2024-04-16T13:49:44.297571+0300 DEBUG Added session 00bb77818642fc5e
+2024-04-16T13:49:44.298567+0300 DEBUG Tokens updated successfully!
+2024-04-16T13:50:02.138703+0300 INFO dev
+2024-04-16T13:50:02.466558+0300 INFO rollback
+2024-04-16T13:50:02.475363+0300 INFO rollback
+2024-04-16T13:50:02.494637+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T13:50:02.495638+0300 DEBUG Added session 8119f967a6759c51
+2024-04-16T13:50:02.501775+0300 DEBUG Added session 987648eb77b62562
+2024-04-16T13:50:02.502775+0300 DEBUG Tokens updated successfully!
+2024-04-16T13:50:02.512273+0300 DEBUG Added session d9f99a11ddacd73e
+2024-04-16T13:50:02.513297+0300 DEBUG Tokens updated successfully!
+2024-04-16T13:51:05.738868+0300 INFO dev
+2024-04-16T13:51:06.088088+0300 INFO rollback
+2024-04-16T13:51:06.098088+0300 INFO rollback
+2024-04-16T13:51:06.117088+0300 DEBUG Added session 8fe5532afe391fd9
+2024-04-16T13:51:06.124088+0300 DEBUG Added session be9637025941a153
+2024-04-16T13:51:06.125089+0300 DEBUG Tokens updated successfully!
+2024-04-16T13:51:06.137728+0300 DEBUG Added session 4eba87b9bd6c40d4
+2024-04-16T13:51:06.138139+0300 DEBUG Tokens updated successfully!
+2024-04-16T13:51:15.961815+0300 INFO dev
+2024-04-16T13:51:23.849316+0300 INFO dev
+2024-04-16T13:51:24.210442+0300 INFO rollback
+2024-04-16T13:51:24.219635+0300 INFO rollback
+2024-04-16T13:51:24.239956+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T13:51:24.241948+0300 DEBUG Added session 64f25414df3b70cd
+2024-04-16T13:51:24.250948+0300 DEBUG Added session 92c555e652f05f48
+2024-04-16T13:51:24.251977+0300 DEBUG Tokens updated successfully!
+2024-04-16T13:51:24.261491+0300 DEBUG Added session 8b76aa6dd0a7c022
+2024-04-16T13:51:24.262492+0300 DEBUG Tokens updated successfully!
+2024-04-16T13:56:05.165084+0300 INFO dev
+2024-04-16T13:56:05.527139+0300 INFO rollback
+2024-04-16T13:56:05.535140+0300 INFO rollback
+2024-04-16T13:56:05.553139+0300 DEBUG Added session e1f5a361811fc1a2
+2024-04-16T13:56:05.560139+0300 DEBUG Added session fbeaedf03560119d
+2024-04-16T13:56:05.561138+0300 DEBUG Tokens updated successfully!
+2024-04-16T13:56:05.571138+0300 DEBUG Added session c3d536a2bbe657dd
+2024-04-16T13:56:05.572140+0300 DEBUG Tokens updated successfully!
+2024-04-16T13:56:22.523913+0300 INFO dev
+2024-04-16T13:56:22.852833+0300 INFO rollback
+2024-04-16T13:56:22.862820+0300 INFO rollback
+2024-04-16T13:56:22.883740+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T13:56:22.885739+0300 DEBUG Added session 3307cd804e672ba4
+2024-04-16T13:56:22.892670+0300 DEBUG Added session 0ad7a15ce1755ffe
+2024-04-16T13:56:22.892670+0300 DEBUG Tokens updated successfully!
+2024-04-16T13:56:22.903226+0300 DEBUG Added session e57a35fa59a13da6
+2024-04-16T13:56:22.903226+0300 DEBUG Tokens updated successfully!
+2024-04-16T13:56:55.755908+0300 INFO dev
+2024-04-16T13:56:56.101462+0300 INFO rollback
+2024-04-16T13:56:56.110462+0300 INFO rollback
+2024-04-16T13:56:56.128463+0300 DEBUG Added session 22972997e119a794
+2024-04-16T13:56:56.134463+0300 DEBUG Added session 2fe1c2ab01b2b2f1
+2024-04-16T13:56:56.134463+0300 DEBUG Tokens updated successfully!
+2024-04-16T13:56:56.143020+0300 DEBUG Added session bcdf101dadaf634b
+2024-04-16T13:56:56.143020+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:01:01.009676+0300 INFO dev
+2024-04-16T14:01:01.377086+0300 INFO rollback
+2024-04-16T14:01:01.386082+0300 INFO rollback
+2024-04-16T14:01:01.406082+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:01:01.408081+0300 DEBUG Added session 43a3ea81eb160858
+2024-04-16T14:01:01.414081+0300 DEBUG Added session 03b1fd3c1f7d6fe0
+2024-04-16T14:01:01.415082+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:01:01.424080+0300 DEBUG Added session 111d59922da1836b
+2024-04-16T14:01:01.424080+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:01:01.432096+0300 INFO rollback
+2024-04-16T14:01:01.447080+0300 DEBUG Added session 38844ef4db1a53d3
+2024-04-16T14:02:57.641490+0300 INFO dev
+2024-04-16T14:02:58.049370+0300 INFO Starting server...
+2024-04-16T14:03:02.888609+0300 INFO dev
+2024-04-16T14:03:03.275177+0300 INFO rollback
+2024-04-16T14:03:03.287819+0300 INFO rollback
+2024-04-16T14:03:03.305571+0300 DEBUG Added session 457e679570b709a6
+2024-04-16T14:03:03.315669+0300 DEBUG Added session 497fbe97efffc943
+2024-04-16T14:03:03.315669+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:03:03.330720+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:03:03.331749+0300 DEBUG Added session 86a7e02fe9cef3fd
+2024-04-16T14:03:03.332720+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:03:03.341002+0300 INFO rollback
+2024-04-16T14:03:03.355231+0300 DEBUG Added session 43654edf304a3008
+2024-04-16T14:03:32.727006+0300 INFO dev
+2024-04-16T14:03:33.150753+0300 INFO rollback
+2024-04-16T14:03:33.164755+0300 INFO rollback
+2024-04-16T14:03:33.182754+0300 DEBUG Added session 3457571c077bf2ed
+2024-04-16T14:03:33.190753+0300 DEBUG Added session 4dd2b75b0aaa733a
+2024-04-16T14:03:33.190753+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:03:33.201753+0300 DEBUG Added session 5fea3c525d842ba8
+2024-04-16T14:03:33.202753+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:03:33.212755+0300 INFO rollback
+2024-04-16T14:03:33.232754+0300 DEBUG Added session 74df18be001895a2
+2024-04-16T14:04:00.909771+0300 INFO dev
+2024-04-16T14:04:01.297502+0300 INFO rollback
+2024-04-16T14:04:01.306960+0300 INFO rollback
+2024-04-16T14:04:01.328951+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:04:01.330954+0300 DEBUG Added session 3cbdc574c54e3ae2
+2024-04-16T14:04:01.338952+0300 DEBUG Added session d90fac22873847aa
+2024-04-16T14:04:01.338952+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:04:01.351245+0300 DEBUG Added session 4c3c62dac3c16aae
+2024-04-16T14:04:01.352237+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:04:01.364066+0300 INFO rollback
+2024-04-16T14:04:01.378863+0300 DEBUG Added session 99d12757d8ba5bb6
+2024-04-16T14:04:19.068040+0300 INFO dev
+2024-04-16T14:04:19.474673+0300 INFO rollback
+2024-04-16T14:04:19.488674+0300 INFO rollback
+2024-04-16T14:04:19.507673+0300 DEBUG Added session 53f4a46f6bd0d26e
+2024-04-16T14:04:19.516672+0300 DEBUG Added session acc634f75d3d42bd
+2024-04-16T14:04:19.516672+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:04:19.529673+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:04:19.532674+0300 DEBUG Added session 6e0b55e4b7e8391e
+2024-04-16T14:04:19.532674+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:04:19.543674+0300 INFO rollback
+2024-04-16T14:04:19.559675+0300 DEBUG Added session fcbd4655e5055f36
+2024-04-16T14:04:19.568671+0300 INFO rollback
+2024-04-16T14:04:19.568671+0300 ERROR (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.ForeignKeyViolationError'>: insert or update on table "tasks" violates foreign key constraint "tasks_username_fkey"
+DETAIL:  Key (username)=(test) is not present in table "users".
+[SQL: INSERT INTO tasks (title, description, status, created_at, updated_at, username) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::TIMESTAMP WITHOUT TIME ZONE, $5::TIMESTAMP WITHOUT TIME ZONE, $6::VARCHAR) RETURNING tasks.id, tasks.title, tasks.description, tasks.status, tasks.created_at, tasks.updated_at, tasks.username]
+[parameters: ('test', 'test', 'planned', datetime.datetime(2024, 4, 16, 14, 4, 19, 211128), datetime.datetime(2024, 4, 16, 14, 4, 19, 211128), 'test')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[33m[1mTraceback (most recent call last):[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = await prepared_stmt.fetch(*parameters)
+    │    │             │             │      └ ('test', 'test', 'planned', datetime.datetime(2024, 4, 16, 14, 4, 19, 211128), datetime.datetime(2024, 4, 16, 14, 4, 19, 2111...
+    │    │             │             └ <function PreparedStatement.fetch at 0x000001D79BB8F740>
+    │    │             └ <asyncpg.prepared_stmt.PreparedStatement object at 0x000001D79C0903B0>
+    │    └ <member '_rows' of 'AsyncAdapt_asyncpg_cursor' objects>
+    └ <sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_cursor object at 0x000001D79C1D5B40>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+                 │                   │        └ None
+                 │                   └ ('test', 'test', 'planned', datetime.datetime(2024, 4, 16, 14, 4, 19, 211128), datetime.datetime(2024, 4, 16, 14, 4, 19, 2111...
+                 └ <asyncpg.prepared_stmt.PreparedStatement object at 0x000001D79C0903B0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\asyncpg\prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                            └ <asyncpg.prepared_stmt.PreparedStatement object at 0x000001D79C0903B0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\asyncpg\prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+                 │        └ <asyncpg.protocol.protocol.Protocol object at 0x000001D79C045E90>
+                 └ <function PreparedStatement.__bind_execute.<locals>.<lambda> at 0x000001D79C557920>
+  File "asyncpg\protocol\protocol.pyx", line 207, in bind_execute
+    return await waiter
+
+[31m[1masyncpg.exceptions.ForeignKeyViolationError[0m:[1m insert or update on table "tasks" violates foreign key constraint "tasks_username_fkey"
+DETAIL:  Key (username)=(test) is not present in table "users".[0m
+
+
+[1mThe above exception was the direct cause of the following exception:[0m
+
+
+[33m[1mTraceback (most recent call last):[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000001D79B45CCC0>
+    │    └ <sqlalchemy.dialects.postgresql.asyncpg.PGDialect_asyncpg object at 0x000001D79B946E10>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001D79C574610>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ ('test', 'test', 'planned', datetime.datetime(2024, 4, 16, 14, 4, 19, 211128), datetime.datetime(2024, 4, 16, 14, 4, 19, 2111...
+    │      │       └ 'INSERT INTO tasks (title, description, status, created_at, updated_at, username) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCH...
+    │      └ <function AsyncAdapt_asyncpg_cursor.execute at 0x000001D79BA9CCC0>
+    └ <sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_cursor object at 0x000001D79C1D5B40>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+    │    └ <member '_adapt_connection' of 'AsyncAdapt_asyncpg_cursor' objects>
+    └ <sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_cursor object at 0x000001D79C1D5B40>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 131, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+           │                     └ <coroutine object AsyncAdapt_asyncpg_cursor._prepare_and_execute at 0x000001D79C1C1360>
+           └ <_AsyncIoGreenlet object at 0x000001D79C55B380 (otid=0x000001D79ADF4420) dead>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+                  └ <coroutine object AsyncAdapt_asyncpg_cursor._prepare_and_execute at 0x000001D79C1C1360>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+    │    └ <function AsyncAdapt_asyncpg_cursor._handle_exception at 0x000001D79BA9CAE0>
+    └ <sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_cursor object at 0x000001D79C1D5B40>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+    │    │                                   └ ForeignKeyViolationError('insert or update on table "tasks" violates foreign key constraint "tasks_username_fkey"')
+    │    └ <member '_adapt_connection' of 'AsyncAdapt_asyncpg_cursor' objects>
+    └ <sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_cursor object at 0x000001D79C1D5B40>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 789, in _handle_exception
+    raise translated_error from error
+          │                     └ ForeignKeyViolationError('insert or update on table "tasks" violates foreign key constraint "tasks_username_fkey"')
+          └ IntegrityError('<class \'asyncpg.exceptions.ForeignKeyViolationError\'>: insert or update on table "tasks" violates foreign k...
+
+[31m[1msqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError[0m:[1m <class 'asyncpg.exceptions.ForeignKeyViolationError'>: insert or update on table "tasks" violates foreign key constraint "tasks_username_fkey"
+DETAIL:  Key (username)=(test) is not present in table "users".[0m
+
+
+[1mThe above exception was the direct cause of the following exception:[0m
+
+
+[33m[1mTraceback (most recent call last):[0m
+
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+
+  File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Scripts\pytest.exe\[0m[32m[1m__main__.py[0m", line [33m7[0m, in [35m<module>[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\_pytest\config\__init__.py", line 197, in console_main
+    code = main()
+           └ <function main at 0x000001D796D33240>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\_pytest\config\__init__.py", line 174, in main
+    ret: Union[ExitCode, int] = config.hook.pytest_cmdline_main(
+         │     │                │      │    └ <HookCaller 'pytest_cmdline_main'>
+         │     │                │      └ <_pytest.config.compat.PathAwareHookProxy object at 0x000001D79702EC10>
+         │     │                └ <_pytest.config.Config object at 0x000001D79702EA50>
+         │     └ <enum 'ExitCode'>
+         └ typing.Union
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\pluggy\_hooks.py", line 501, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           │    │         │    │     │    │                  │       └ True
+           │    │         │    │     │    │                  └ {'config': <_pytest.config.Config object at 0x000001D79702EA50>}
+           │    │         │    │     │    └ <member '_hookimpls' of 'HookCaller' objects>
+           │    │         │    │     └ <HookCaller 'pytest_cmdline_main'>
+           │    │         │    └ <member 'name' of 'HookCaller' objects>
+           │    │         └ <HookCaller 'pytest_cmdline_main'>
+           │    └ <member '_hookexec' of 'HookCaller' objects>
+           └ <HookCaller 'pytest_cmdline_main'>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\pluggy\_manager.py", line 119, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           │    │               │          │        │       └ True
+           │    │               │          │        └ {'config': <_pytest.config.Config object at 0x000001D79702EA50>}
+           │    │               │          └ [<HookImpl plugin_name='main', plugin=<module '_pytest.main' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\venv...
+           │    │               └ 'pytest_cmdline_main'
+           │    └ <function _multicall at 0x000001D7966696C0>
+           └ <_pytest.config.PytestPluginManager object at 0x000001D796F3F010>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\pluggy\_callers.py", line 102, in _multicall
+    res = hook_impl.function(*args)
+          │         │         └ [<_pytest.config.Config object at 0x000001D79702EA50>]
+          │         └ <member 'function' of 'HookImpl' objects>
+          └ <HookImpl plugin_name='main', plugin=<module '_pytest.main' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\venv\...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\_pytest\main.py", line 332, in pytest_cmdline_main
+    return wrap_session(config, _main)
+           │            │       └ <function _main at 0x000001D796DF9800>
+           │            └ <_pytest.config.Config object at 0x000001D79702EA50>
+           └ <function wrap_session at 0x000001D796DF9760>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\_pytest\main.py", line 285, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+    │       │            │    │       └ <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=6>
+    │       │            │    └ <_pytest.config.Config object at 0x000001D79702EA50>
+    │       │            └ <function _main at 0x000001D796DF9800>
+    │       └ <ExitCode.OK: 0>
+    └ <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=6>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\_pytest\main.py", line 339, in _main
+    config.hook.pytest_runtestloop(session=session)
+    │      │    │                          └ <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=6>
+    │      │    └ <HookCaller 'pytest_runtestloop'>
+    │      └ <_pytest.config.compat.PathAwareHookProxy object at 0x000001D79702EC10>
+    └ <_pytest.config.Config object at 0x000001D79702EA50>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\pluggy\_hooks.py", line 501, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           │    │         │    │     │    │                  │       └ True
+           │    │         │    │     │    │                  └ {'session': <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=6>}
+           │    │         │    │     │    └ <member '_hookimpls' of 'HookCaller' objects>
+           │    │         │    │     └ <HookCaller 'pytest_runtestloop'>
+           │    │         │    └ <member 'name' of 'HookCaller' objects>
+           │    │         └ <HookCaller 'pytest_runtestloop'>
+           │    └ <member '_hookexec' of 'HookCaller' objects>
+           └ <HookCaller 'pytest_runtestloop'>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\pluggy\_manager.py", line 119, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           │    │               │          │        │       └ True
+           │    │               │          │        └ {'session': <Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=6>}
+           │    │               │          └ [<HookImpl plugin_name='main', plugin=<module '_pytest.main' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\venv...
+           │    │               └ 'pytest_runtestloop'
+           │    └ <function _multicall at 0x000001D7966696C0>
+           └ <_pytest.config.PytestPluginManager object at 0x000001D796F3F010>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\pluggy\_callers.py", line 102, in _multicall
+    res = hook_impl.function(*args)
+          │         │         └ [<Session  exitstatus=<ExitCode.OK: 0> testsfailed=0 testscollected=6>]
+          │         └ <member 'function' of 'HookImpl' objects>
+          └ <HookImpl plugin_name='main', plugin=<module '_pytest.main' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\venv\...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\_pytest\main.py", line 364, in pytest_runtestloop
+    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+    │    │                                        │              └ None
+    │    │                                        └ <Coroutine test_add_task>
+    │    └ <member 'config' of 'Node' objects>
+    └ <Coroutine test_add_task>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\pluggy\_hooks.py", line 501, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           │    │         │    │     │    │                  │       └ True
+           │    │         │    │     │    │                  └ {'item': <Coroutine test_add_task>, 'nextitem': None}
+           │    │         │    │     │    └ <member '_hookimpls' of 'HookCaller' objects>
+           │    │         │    │     └ <HookCaller 'pytest_runtest_protocol'>
+           │    │         │    └ <member 'name' of 'HookCaller' objects>
+           │    │         └ <HookCaller 'pytest_runtest_protocol'>
+           │    └ <member '_hookexec' of 'HookCaller' objects>
+           └ <HookCaller 'pytest_runtest_protocol'>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\pluggy\_manager.py", line 119, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           │    │               │          │        │       └ True
+           │    │               │          │        └ {'item': <Coroutine test_add_task>, 'nextitem': None}
+           │    │               │          └ [<HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\...
+           │    │               └ 'pytest_runtest_protocol'
+           │    └ <function _multicall at 0x000001D7966696C0>
+           └ <_pytest.config.PytestPluginManager object at 0x000001D796F3F010>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\pluggy\_callers.py", line 102, in _multicall
+    res = hook_impl.function(*args)
+          │         │         └ [<Coroutine test_add_task>, None]
+          │         └ <member 'function' of 'HookImpl' objects>
+          └ <HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\v...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\_pytest\runner.py", line 115, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+    │               │              └ None
+    │               └ <Coroutine test_add_task>
+    └ <function runtestprotocol at 0x000001D796DF89A0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\_pytest\runner.py", line 134, in runtestprotocol
+    reports.append(call_and_report(item, "call", log))
+    │       │      │               │             └ True
+    │       │      │               └ <Coroutine test_add_task>
+    │       │      └ <function call_and_report at 0x000001D796DF8E00>
+    │       └ <method 'append' of 'list' objects>
+    └ [<TestReport 'tests/tasks_test.py::test_add_task' when='setup' outcome='passed'>]
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\_pytest\runner.py", line 239, in call_and_report
+    call = CallInfo.from_call(
+           │        └ <classmethod(<function CallInfo.from_call at 0x000001D796DF9120>)>
+           └ <class '_pytest.runner.CallInfo'>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\_pytest\runner.py", line 340, in from_call
+    result: Optional[TResult] = func()
+            │        │          └ <function call_and_report.<locals>.<lambda> at 0x000001D79C545A80>
+            │        └ +TResult
+            └ typing.Optional
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\_pytest\runner.py", line 240, in <lambda>
+    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
+            │                 │       └ {}
+            │                 └ <Coroutine test_add_task>
+            └ <HookCaller 'pytest_runtest_call'>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\pluggy\_hooks.py", line 501, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           │    │         │    │     │    │                  │       └ False
+           │    │         │    │     │    │                  └ {'item': <Coroutine test_add_task>}
+           │    │         │    │     │    └ <member '_hookimpls' of 'HookCaller' objects>
+           │    │         │    │     └ <HookCaller 'pytest_runtest_call'>
+           │    │         │    └ <member 'name' of 'HookCaller' objects>
+           │    │         └ <HookCaller 'pytest_runtest_call'>
+           │    └ <member '_hookexec' of 'HookCaller' objects>
+           └ <HookCaller 'pytest_runtest_call'>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\pluggy\_manager.py", line 119, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           │    │               │          │        │       └ False
+           │    │               │          │        └ {'item': <Coroutine test_add_task>}
+           │    │               │          └ [<HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\...
+           │    │               └ 'pytest_runtest_call'
+           │    └ <function _multicall at 0x000001D7966696C0>
+           └ <_pytest.config.PytestPluginManager object at 0x000001D796F3F010>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\pluggy\_callers.py", line 102, in _multicall
+    res = hook_impl.function(*args)
+          │         │         └ [<Coroutine test_add_task>]
+          │         └ <member 'function' of 'HookImpl' objects>
+          └ <HookImpl plugin_name='runner', plugin=<module '_pytest.runner' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\v...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\_pytest\runner.py", line 172, in pytest_runtest_call
+    item.runtest()
+    │    └ <function Coroutine.runtest at 0x000001D798B5FF60>
+    └ <Coroutine test_add_task>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\pytest_asyncio\plugin.py", line 436, in runtest
+    super().runtest()
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\_pytest\python.py", line 1772, in runtest
+    self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+    │    │                                   └ <Coroutine test_add_task>
+    │    └ <property object at 0x000001D796D89AD0>
+    └ <Coroutine test_add_task>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\pluggy\_hooks.py", line 501, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+           │    │         │    │     │    │                  │       └ True
+           │    │         │    │     │    │                  └ {'pyfuncitem': <Coroutine test_add_task>}
+           │    │         │    │     │    └ <member '_hookimpls' of 'HookCaller' objects>
+           │    │         │    │     └ <HookCaller 'pytest_pyfunc_call'>
+           │    │         │    └ <member 'name' of 'HookCaller' objects>
+           │    │         └ <HookCaller 'pytest_pyfunc_call'>
+           │    └ <member '_hookexec' of 'HookCaller' objects>
+           └ <HookCaller 'pytest_pyfunc_call'>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\pluggy\_manager.py", line 119, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+           │    │               │          │        │       └ True
+           │    │               │          │        └ {'pyfuncitem': <Coroutine test_add_task>}
+           │    │               │          └ [<HookImpl plugin_name='python', plugin=<module '_pytest.python' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\...
+           │    │               └ 'pytest_pyfunc_call'
+           │    └ <function _multicall at 0x000001D7966696C0>
+           └ <_pytest.config.PytestPluginManager object at 0x000001D796F3F010>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\pluggy\_callers.py", line 102, in _multicall
+    res = hook_impl.function(*args)
+          │         │         └ [<Coroutine test_add_task>]
+          │         └ <member 'function' of 'HookImpl' objects>
+          └ <HookImpl plugin_name='python', plugin=<module '_pytest.python' from 'C:\\Users\\PATHFIND3R\\PycharmProjects\\task_manager\\v...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\_pytest\python.py", line 195, in pytest_pyfunc_call
+    result = testfunction(**testargs)
+             │              └ {'ac': <httpx.AsyncClient object at 0x000001D79C152990>}
+             └ <function test_add_task at 0x000001D79C5456C0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\pytest_asyncio\plugin.py", line 897, in inner
+    _loop.run_until_complete(task)
+    │     │                  └ <Task pending name='Task-35' coro=<test_add_task() running at C:\Users\PATHFIND3R\PycharmProjects\task_manager\tests\tasks_te...
+    │     └ <function BaseEventLoop.run_until_complete at 0x000001D798AD4720>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+    │    └ <function ProactorEventLoop.run_forever at 0x000001D798B5DC60>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+    │    └ <function BaseEventLoop._run_once at 0x000001D798AD6480>
+    └ <ProactorEventLoop running=True closed=False debug=False>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+    │      └ <function Handle._run at 0x000001D798A2A980>
+    └ <Handle Task.task_wakeup(<Future finished result=True>)>
+  File "C:\Users\PATHFIND3R\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+    │    │            │    │           │    └ <member '_args' of 'Handle' objects>
+    │    │            │    │           └ <Handle Task.task_wakeup(<Future finished result=True>)>
+    │    │            │    └ <member '_callback' of 'Handle' objects>
+    │    │            └ <Handle Task.task_wakeup(<Future finished result=True>)>
+    │    └ <member '_context' of 'Handle' objects>
+    └ <Handle Task.task_wakeup(<Future finished result=True>)>
+
+  File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\tests\[0m[32m[1mtasks_test.py[0m", line [33m24[0m, in [35mtest_add_task[0m
+    [1mresponse[0m [35m[1m=[0m [35m[1mawait[0m [1mac[0m[35m[1m.[0m[1mpost[0m[1m([0m
+    [36m                 │  └ [0m[36m[1m<function AsyncClient.post at 0x000001D79ACE65C0>[0m
+    [36m                 └ [0m[36m[1m<httpx.AsyncClient object at 0x000001D79C152990>[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\httpx\_client.py", line 1892, in post
+    return await self.request(
+                 │    └ <function AsyncClient.request at 0x000001D79ACE5F80>
+                 └ <httpx.AsyncClient object at 0x000001D79C152990>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\httpx\_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+                 │    │    │             │                      └ <httpx._client.UseClientDefault object at 0x000001D79ACD3250>
+                 │    │    │             └ <httpx._client.UseClientDefault object at 0x000001D79ACD3250>
+                 │    │    └ <Request('POST', 'http://127.0.0.1/tasks/')>
+                 │    └ <function AsyncClient.send at 0x000001D79ACE6160>
+                 └ <httpx.AsyncClient object at 0x000001D79C152990>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\httpx\_client.py", line 1661, in send
+    response = await self._send_handling_auth(
+                     │    └ <function AsyncClient._send_handling_auth at 0x000001D79ACE6200>
+                     └ <httpx.AsyncClient object at 0x000001D79C152990>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\httpx\_client.py", line 1689, in _send_handling_auth
+    response = await self._send_handling_redirects(
+                     │    └ <function AsyncClient._send_handling_redirects at 0x000001D79ACE62A0>
+                     └ <httpx.AsyncClient object at 0x000001D79C152990>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\httpx\_client.py", line 1726, in _send_handling_redirects
+    response = await self._send_single_request(request)
+                     │    │                    └ <Request('POST', 'http://127.0.0.1/tasks/')>
+                     │    └ <function AsyncClient._send_single_request at 0x000001D79ACE6340>
+                     └ <httpx.AsyncClient object at 0x000001D79C152990>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\httpx\_client.py", line 1763, in _send_single_request
+    response = await transport.handle_async_request(request)
+                     │         │                    └ <Request('POST', 'http://127.0.0.1/tasks/')>
+                     │         └ <function ASGITransport.handle_async_request at 0x000001D79AC17560>
+                     └ <httpx.ASGITransport object at 0x000001D79BE9E350>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\httpx\_transports\asgi.py", line 164, in handle_async_request
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function ASGITransport.handle_async_request.<locals>.send at 0x000001D79C17C220>
+          │    │   │      └ <function ASGITransport.handle_async_request.<locals>.receive at 0x000001D79B8F4B80>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0'}, 'http_version': '1.1', 'method': 'POST', 'headers': [(b'host', b'127.0.0.1'), (b...
+          │    └ <fastapi.applications.FastAPI object at 0x000001D79BC88510>
+          └ <httpx.ASGITransport object at 0x000001D79BE9E350>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <function ASGITransport.handle_async_request.<locals>.send at 0x000001D79C17C220>
+                           │      └ <function ASGITransport.handle_async_request.<locals>.receive at 0x000001D79B8F4B80>
+                           └ {'type': 'http', 'asgi': {'version': '3.0'}, 'http_version': '1.1', 'method': 'POST', 'headers': [(b'host', b'127.0.0.1'), (b...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function ASGITransport.handle_async_request.<locals>.send at 0x000001D79C17C220>
+          │    │                │      └ <function ASGITransport.handle_async_request.<locals>.receive at 0x000001D79B8F4B80>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0'}, 'http_version': '1.1', 'method': 'POST', 'headers': [(b'host', b'127.0.0.1'), (b...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x000001D79C16BF90>
+          └ <fastapi.applications.FastAPI object at 0x000001D79BC88510>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x000001D79C17D120>
+          │    │   │      └ <function ASGITransport.handle_async_request.<locals>.receive at 0x000001D79B8F4B80>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0'}, 'http_version': '1.1', 'method': 'POST', 'headers': [(b'host', b'127.0.0.1'), (b...
+          │    └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x000001D79C152F90>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x000001D79C16BF90>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+                     │    │             │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next at 0x000001D79C17C180>
+                     │    │             └ <starlette.middleware.base._CachedRequest object at 0x000001D79C56B790>
+                     │    └ <function catch_exceptions at 0x000001D79C0A39C0>
+                     └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x000001D79C152F90>
+
+> File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\src\[0m[32m[1mmain.py[0m", line [33m18[0m, in [35mcatch_exceptions[0m
+    [35m[1mreturn[0m [35m[1mawait[0m [1mcall_next[0m[1m([0m[1mrequest[0m[1m)[0m
+    [36m             │         └ [0m[36m[1m<starlette.middleware.base._CachedRequest object at 0x000001D79C56B790>[0m
+    [36m             └ [0m[36m[1m<function BaseHTTPMiddleware.__call__.<locals>.call_next at 0x000001D79C17C180>[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\base.py", line 165, in call_next
+    raise app_exc
+          └ IntegrityError('(sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class \'asyncpg.exceptions.ForeignKeyViolationError\...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+          │    │   │      │                      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x000001D79C547880>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001D79C547380>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0'}, 'http_version': '1.1', 'method': 'POST', 'headers': [(b'host', b'127.0.0.1'), (b...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001D79C153FD0>
+          └ <starlette.middleware.base.BaseHTTPMiddleware object at 0x000001D79C152F90>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.send_no_error at 0x000001D79C547880>
+          │                            │    │    │     │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001D79C547380>
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0'}, 'http_version': '1.1', 'method': 'POST', 'headers': [(b'host', b'127.0.0.1'), (b...
+          │                            │    │    └ <starlette.requests.Request object at 0x000001D79C56A8D0>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x000001D79C0871D0>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x000001D79C153FD0>
+          └ <function wrap_app_handling_exceptions at 0x000001D79AA3B600>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001D79C5563E0>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001D79C547380>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0'}, 'http_version': '1.1', 'method': 'POST', 'headers': [(b'host', b'127.0.0.1'), (b...
+          └ <fastapi.routing.APIRouter object at 0x000001D79C0871D0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 758, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001D79C5563E0>
+          │    │                │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001D79C547380>
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0'}, 'http_version': '1.1', 'method': 'POST', 'headers': [(b'host', b'127.0.0.1'), (b...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x000001D79C0871D0>>
+          └ <fastapi.routing.APIRouter object at 0x000001D79C0871D0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 778, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001D79C5563E0>
+          │     │      │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001D79C547380>
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0'}, 'http_version': '1.1', 'method': 'POST', 'headers': [(b'host', b'127.0.0.1'), (b...
+          │     └ <function Route.handle at 0x000001D79AA7CCC0>
+          └ APIRoute(path='/tasks/', name='add_task', methods=['POST'])
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 299, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001D79C5563E0>
+          │    │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001D79C547380>
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0'}, 'http_version': '1.1', 'method': 'POST', 'headers': [(b'host', b'127.0.0.1'), (b...
+          │    └ <function request_response.<locals>.app at 0x000001D79C0A0680>
+          └ APIRoute(path='/tasks/', name='add_task', methods=['POST'])
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 79, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001D79C5563E0>
+          │                            │    │        │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001D79C547380>
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0'}, 'http_version': '1.1', 'method': 'POST', 'headers': [(b'host', b'127.0.0.1'), (b...
+          │                            │    └ <starlette.requests.Request object at 0x000001D79C56A310>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x000001D79C556480>
+          └ <function wrap_app_handling_exceptions at 0x000001D79AA3B600>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x000001D79C5562A0>
+          │   │      └ <function BaseHTTPMiddleware.__call__.<locals>.call_next.<locals>.receive_or_disconnect at 0x000001D79C547380>
+          │   └ {'type': 'http', 'asgi': {'version': '3.0'}, 'http_version': '1.1', 'method': 'POST', 'headers': [(b'host', b'127.0.0.1'), (b...
+          └ <function request_response.<locals>.app.<locals>.app at 0x000001D79C556480>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\starlette\routing.py", line 74, in app
+    response = await func(request)
+                     │    └ <starlette.requests.Request object at 0x000001D79C56A310>
+                     └ <function get_request_handler.<locals>.app at 0x000001D79C0A0F40>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\fastapi\routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x000001D79AA7C7C0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\fastapi\routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'task_service': <src.services.task_service.TaskService object at 0x000001D79C563B90>, 'user': Payload(username='user_test', ...
+                 │         └ <function add_task at 0x000001D79C0A00E0>
+                 └ <fastapi.dependencies.models.Dependant object at 0x000001D79C0D3510>
+
+  File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\src\api\endpoints\[0m[32m[1mtasks.py[0m", line [33m34[0m, in [35madd_task[0m
+    [1mresult[0m[1m:[0m [1mTaskFromDB[0m [35m[1m=[0m [35m[1mawait[0m [1mtask_service[0m[35m[1m.[0m[1madd_task[0m[1m([0m[1mtask_data[0m[1m)[0m
+    [36m                           │            │        └ [0m[36m[1mTask(title='test', description='test', status='planned', created_at=datetime.datetime(2024, 4, 16, 14, 4, 19, 211128), update...[0m
+    [36m                           │            └ [0m[36m[1m<function TaskService.add_task at 0x000001D79C0A1A80>[0m
+    [36m                           └ [0m[36m[1m<src.services.task_service.TaskService object at 0x000001D79C563B90>[0m
+
+  File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\src\services\[0m[32m[1mtask_service.py[0m", line [33m25[0m, in [35madd_task[0m
+    [1mres[0m [35m[1m=[0m [35m[1mawait[0m [1mself[0m[35m[1m.[0m[1muow[0m[35m[1m.[0m[1mtask_repos[0m[35m[1m.[0m[1madd_one[0m[1m([0m[1mtask[0m[35m[1m.[0m[1mmodel_dump[0m[1m([0m[1m)[0m[1m)[0m
+    [36m            │    │   │          │       │    └ [0m[36m[1m<function BaseModel.model_dump at 0x000001D798E00540>[0m
+    [36m            │    │   │          │       └ [0m[36m[1mTask(title='test', description='test', status='planned', created_at=datetime.datetime(2024, 4, 16, 14, 4, 19, 211128), update...[0m
+    [36m            │    │   │          └ [0m[36m[1m<function Repository.add_one at 0x000001D79BE6F600>[0m
+    [36m            │    │   └ [0m[36m[1m<src.repositories.task_repository.TaskRepository object at 0x000001D79C55A7D0>[0m
+    [36m            │    └ [0m[36m[1m<src.utils.uow.UnitOfWork object at 0x000001D79C18DF50>[0m
+    [36m            └ [0m[36m[1m<src.services.task_service.TaskService object at 0x000001D79C563B90>[0m
+
+  File "[32mC:\Users\PATHFIND3R\PycharmProjects\task_manager\src\repositories\[0m[32m[1mbase_repository.py[0m", line [33m33[0m, in [35madd_one[0m
+    [1mresult[0m [35m[1m=[0m [35m[1mawait[0m [1mself[0m[35m[1m.[0m[1msession[0m[35m[1m.[0m[1mexecute[0m[1m([0m[1mstmt[0m[1m)[0m
+    [36m               │    │       │       └ [0m[36m[1m<sqlalchemy.sql.dml.Insert object at 0x000001D79C559FD0>[0m
+    [36m               │    │       └ [0m[36m[1m<function AsyncSession.execute at 0x000001D799941E40>[0m
+    [36m               │    └ [0m[36m[1m<sqlalchemy.ext.asyncio.session.AsyncSession object at 0x000001D79C56A250>[0m
+    [36m               └ [0m[36m[1m<src.repositories.task_repository.TaskRepository object at 0x000001D79C55A7D0>[0m
+
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 461, in execute
+    result = await greenlet_spawn(
+                   └ <function greenlet_spawn at 0x000001D79AE29BC0>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             │       │      │   └ <built-in function exc_info>
+             │       │      └ <module 'sys' (built-in)>
+             │       └ <method 'throw' of 'greenlet.greenlet' objects>
+             └ <_AsyncIoGreenlet object at 0x000001D79C55B380 (otid=0x000001D79ADF4420) dead>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2306, in execute
+    return self._execute_internal(
+           │    └ <function Session._execute_internal at 0x000001D79B77E840>
+           └ <sqlalchemy.orm.session.Session object at 0x000001D79C13B310>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2191, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                   │      │                 └ <classmethod(<function BulkORMInsert.orm_execute_statement at 0x000001D79B75E480>)>
+                   │      └ <class 'sqlalchemy.orm.bulk_persistence.BulkORMInsert'>
+                   └ typing.Any
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\orm\bulk_persistence.py", line 1276, in orm_execute_statement
+    result = conn.execute(
+             │    └ <function Connection.execute at 0x000001D79B3AD440>
+             └ <sqlalchemy.engine.base.Connection object at 0x000001D79C574610>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1422, in execute
+    return meth(
+           └ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.annotation.AnnotatedInsert object at 0x000001D79C55AD50>>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+           │          └ <function Connection._execute_clauseelement at 0x000001D79B3AD760>
+           └ <sqlalchemy.engine.base.Connection object at 0x000001D79C574610>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1644, in _execute_clauseelement
+    ret = self._execute_context(
+          │    └ <function Connection._execute_context at 0x000001D79B3AD940>
+          └ <sqlalchemy.engine.base.Connection object at 0x000001D79C574610>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1850, in _execute_context
+    return self._exec_single_context(
+           │    └ <function Connection._exec_single_context at 0x000001D79B3AD9E0>
+           └ <sqlalchemy.engine.base.Connection object at 0x000001D79C574610>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1990, in _exec_single_context
+    self._handle_dbapi_exception(
+    │    └ <function Connection._handle_dbapi_exception at 0x000001D79B3ADC60>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001D79C574610>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2357, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+          │                    │              │                 └ IntegrityError('<class \'asyncpg.exceptions.ForeignKeyViolationError\'>: insert or update on table "tasks" violates foreign k...
+          │                    │              └ (<class 'sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError'>, IntegrityError('<class \'asyncpg.e...
+          │                    └ <method 'with_traceback' of 'BaseException' objects>
+          └ IntegrityError('(sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class \'asyncpg.exceptions.ForeignKeyViolationError\...
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1971, in _exec_single_context
+    self.dialect.do_execute(
+    │    │       └ <function DefaultDialect.do_execute at 0x000001D79B45CCC0>
+    │    └ <sqlalchemy.dialects.postgresql.asyncpg.PGDialect_asyncpg object at 0x000001D79B946E10>
+    └ <sqlalchemy.engine.base.Connection object at 0x000001D79C574610>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 919, in do_execute
+    cursor.execute(statement, parameters)
+    │      │       │          └ ('test', 'test', 'planned', datetime.datetime(2024, 4, 16, 14, 4, 19, 211128), datetime.datetime(2024, 4, 16, 14, 4, 19, 2111...
+    │      │       └ 'INSERT INTO tasks (title, description, status, created_at, updated_at, username) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCH...
+    │      └ <function AsyncAdapt_asyncpg_cursor.execute at 0x000001D79BA9CCC0>
+    └ <sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_cursor object at 0x000001D79C1D5B40>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+    │    └ <member '_adapt_connection' of 'AsyncAdapt_asyncpg_cursor' objects>
+    └ <sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_cursor object at 0x000001D79C1D5B40>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 131, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+           │                     └ <coroutine object AsyncAdapt_asyncpg_cursor._prepare_and_execute at 0x000001D79C1C1360>
+           └ <_AsyncIoGreenlet object at 0x000001D79C55B380 (otid=0x000001D79ADF4420) dead>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+                  └ <coroutine object AsyncAdapt_asyncpg_cursor._prepare_and_execute at 0x000001D79C1C1360>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+    │    └ <function AsyncAdapt_asyncpg_cursor._handle_exception at 0x000001D79BA9CAE0>
+    └ <sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_cursor object at 0x000001D79C1D5B40>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+    │    │                                   └ ForeignKeyViolationError('insert or update on table "tasks" violates foreign key constraint "tasks_username_fkey"')
+    │    └ <member '_adapt_connection' of 'AsyncAdapt_asyncpg_cursor' objects>
+    └ <sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_cursor object at 0x000001D79C1D5B40>
+  File "C:\Users\PATHFIND3R\PycharmProjects\task_manager\venv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 789, in _handle_exception
+    raise translated_error from error
+          │                     └ ForeignKeyViolationError('insert or update on table "tasks" violates foreign key constraint "tasks_username_fkey"')
+          └ IntegrityError('<class \'asyncpg.exceptions.ForeignKeyViolationError\'>: insert or update on table "tasks" violates foreign k...
+
+[31m[1msqlalchemy.exc.IntegrityError[0m:[1m (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.ForeignKeyViolationError'>: insert or update on table "tasks" violates foreign key constraint "tasks_username_fkey"
+DETAIL:  Key (username)=(test) is not present in table "users".
+[SQL: INSERT INTO tasks (title, description, status, created_at, updated_at, username) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::TIMESTAMP WITHOUT TIME ZONE, $5::TIMESTAMP WITHOUT TIME ZONE, $6::VARCHAR) RETURNING tasks.id, tasks.title, tasks.description, tasks.status, tasks.created_at, tasks.updated_at, tasks.username]
+[parameters: ('test', 'test', 'planned', datetime.datetime(2024, 4, 16, 14, 4, 19, 211128), datetime.datetime(2024, 4, 16, 14, 4, 19, 211128), 'test')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)[0m
+2024-04-16T14:04:39.675652+0300 INFO dev
+2024-04-16T14:04:40.068458+0300 INFO rollback
+2024-04-16T14:04:40.077458+0300 INFO rollback
+2024-04-16T14:04:40.095457+0300 DEBUG Added session f4eb60b6e04de490
+2024-04-16T14:04:40.101456+0300 DEBUG Added session f3409bc35caa4973
+2024-04-16T14:04:40.102456+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:04:40.113458+0300 DEBUG Added session d0b2197604d66704
+2024-04-16T14:04:40.113458+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:04:40.124459+0300 INFO rollback
+2024-04-16T14:04:40.139458+0300 DEBUG Added session a4821e46dac9fcf3
+2024-04-16T14:04:40.149981+0300 INFO rollback
+2024-04-16T14:05:03.354225+0300 INFO dev
+2024-04-16T14:05:03.844354+0300 INFO rollback
+2024-04-16T14:05:03.855327+0300 INFO rollback
+2024-04-16T14:05:03.881974+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:05:03.883973+0300 DEBUG Added session ce138fe29047c825
+2024-04-16T14:05:03.892973+0300 DEBUG Added session 9a46703d66c4933c
+2024-04-16T14:05:03.893973+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:05:03.909469+0300 DEBUG Added session 45d2598a1af2f452
+2024-04-16T14:05:03.910010+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:05:03.924360+0300 INFO rollback
+2024-04-16T14:05:03.947905+0300 DEBUG Added session 3b4af845c800653b
+2024-04-16T14:05:03.962686+0300 INFO rollback
+2024-04-16T14:05:20.031295+0300 INFO dev
+2024-04-16T14:05:20.418544+0300 INFO rollback
+2024-04-16T14:05:20.430543+0300 INFO rollback
+2024-04-16T14:05:20.447544+0300 DEBUG Added session 327e80e1455a7a40
+2024-04-16T14:05:20.457542+0300 DEBUG Added session eaa275205b8b07ba
+2024-04-16T14:05:20.457542+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:05:20.472543+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:05:20.473541+0300 DEBUG Added session ef183d99f65eef5b
+2024-04-16T14:05:20.474543+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:05:20.483542+0300 INFO rollback
+2024-04-16T14:05:20.499541+0300 DEBUG Added session 447864069551a9c3
+2024-04-16T14:05:20.507542+0300 INFO rollback
+2024-04-16T14:05:28.816841+0300 INFO dev
+2024-04-16T14:05:29.194061+0300 INFO rollback
+2024-04-16T14:05:29.203672+0300 INFO rollback
+2024-04-16T14:05:29.220955+0300 DEBUG Added session 7ab7543ccd8507fd
+2024-04-16T14:05:29.228242+0300 DEBUG Added session 256114de1e7ed429
+2024-04-16T14:05:29.229268+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:05:29.241843+0300 DEBUG Added session 38211462b5211172
+2024-04-16T14:05:29.241843+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:05:29.251845+0300 INFO rollback
+2024-04-16T14:05:29.268421+0300 DEBUG Added session 35742746dfaddec9
+2024-04-16T14:05:29.277030+0300 INFO rollback
+2024-04-16T14:07:45.469992+0300 INFO dev
+2024-04-16T14:07:45.845981+0300 INFO rollback
+2024-04-16T14:07:45.856540+0300 INFO rollback
+2024-04-16T14:07:45.876077+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:07:45.878078+0300 DEBUG Added session 22f2700f76ff57d3
+2024-04-16T14:07:45.887615+0300 DEBUG Added session 7fb006d83f576795
+2024-04-16T14:07:45.887615+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:07:45.896471+0300 DEBUG Added session 7e20b5fed1a8a7fb
+2024-04-16T14:07:45.897471+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:07:45.906473+0300 INFO rollback
+2024-04-16T14:07:45.924325+0300 DEBUG Added session d37fcf6e8f3e3919
+2024-04-16T14:07:45.940489+0300 INFO rollback
+2024-04-16T14:08:05.683149+0300 INFO dev
+2024-04-16T14:08:08.812845+0300 INFO dev
+2024-04-16T14:08:09.150879+0300 INFO rollback
+2024-04-16T14:08:09.159523+0300 INFO rollback
+2024-04-16T14:08:09.176662+0300 DEBUG Added session 7fc817b89c056b82
+2024-04-16T14:08:09.184735+0300 DEBUG Added session fbc852bfbf253e8c
+2024-04-16T14:08:09.184735+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:08:09.196766+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:08:09.197764+0300 DEBUG Added session 0fbbbeb0ce828d7a
+2024-04-16T14:08:09.197764+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:08:09.206767+0300 INFO rollback
+2024-04-16T14:08:09.222422+0300 DEBUG Added session 02fa1ed11fb87237
+2024-04-16T14:08:09.231055+0300 INFO rollback
+2024-04-16T14:09:01.766888+0300 INFO dev
+2024-04-16T14:09:02.118706+0300 INFO rollback
+2024-04-16T14:09:02.128737+0300 INFO rollback
+2024-04-16T14:09:02.145533+0300 DEBUG Added session c1822e506656d207
+2024-04-16T14:09:02.153532+0300 DEBUG Added session 255722ac749f002a
+2024-04-16T14:09:02.153532+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:09:02.162533+0300 DEBUG Added session b755f7f0f37298bb
+2024-04-16T14:09:02.162533+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:09:02.170033+0300 INFO rollback
+2024-04-16T14:09:02.186438+0300 DEBUG Added session 299098665a9af707
+2024-04-16T14:09:02.194663+0300 INFO rollback
+2024-04-16T14:09:02.194663+0300 INFO {'title': 'test', 'description': 'test', 'status': 'planned', 'created_at': '2024-04-16T14:09:01.890806', 'updated_at': '2024-04-16T14:09:01.890806', 'username': 'user_test', 'id': 1}
+2024-04-16T14:09:10.350162+0300 INFO dev
+2024-04-16T14:09:10.722820+0300 INFO rollback
+2024-04-16T14:09:10.733820+0300 INFO rollback
+2024-04-16T14:09:10.753823+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:09:10.756823+0300 DEBUG Added session b9f9688a1b3f0bbb
+2024-04-16T14:09:10.765825+0300 DEBUG Added session 6b5bc5df902fb723
+2024-04-16T14:09:10.765825+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:09:10.778826+0300 DEBUG Added session d93ef7e3d5d668d7
+2024-04-16T14:09:10.779821+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:09:10.789820+0300 INFO rollback
+2024-04-16T14:09:10.804820+0300 DEBUG Added session bff018dcd8ceecbf
+2024-04-16T14:09:10.813819+0300 INFO rollback
+2024-04-16T14:09:10.814820+0300 INFO {'title': 'test', 'description': 'test', 'status': 'planned', 'created_at': '2024-04-16T14:09:10.454163', 'updated_at': '2024-04-16T14:09:10.454163', 'username': 'user_test', 'id': 1}
+2024-04-16T14:10:35.389761+0300 INFO dev
+2024-04-16T14:10:35.800576+0300 INFO rollback
+2024-04-16T14:10:35.809617+0300 INFO rollback
+2024-04-16T14:10:35.828615+0300 DEBUG Added session 9c9d2c6a504ebb96
+2024-04-16T14:10:35.836219+0300 DEBUG Added session 37dd40dc301fc100
+2024-04-16T14:10:35.837219+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:10:35.850221+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:10:35.852219+0300 DEBUG Added session e3fd09f80b431ac7
+2024-04-16T14:10:35.852219+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:10:35.861219+0300 INFO rollback
+2024-04-16T14:10:35.877219+0300 DEBUG Added session 8261d44cbadf0b14
+2024-04-16T14:10:35.888220+0300 INFO rollback
+2024-04-16T14:10:35.889220+0300 DEBUG {'title': 'test', 'description': 'test', 'status': 'planned', 'created_at': '2024-04-16T14:10:35.536314', 'updated_at': '2024-04-16T14:10:35.536314', 'username': 'user_test', 'id': 1}
+2024-04-16T14:10:49.941924+0300 INFO dev
+2024-04-16T14:10:50.269389+0300 INFO rollback
+2024-04-16T14:10:50.278982+0300 INFO rollback
+2024-04-16T14:10:50.297255+0300 DEBUG Added session 65dc179cf3d8c424
+2024-04-16T14:10:50.307116+0300 DEBUG Added session 8d55a133de2ae4ab
+2024-04-16T14:10:50.308113+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:10:50.319293+0300 DEBUG Added session ce9416fa5709cedc
+2024-04-16T14:10:50.319293+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:10:50.326842+0300 INFO rollback
+2024-04-16T14:10:50.341412+0300 DEBUG Added session 0375f355d6589c6e
+2024-04-16T14:10:50.351435+0300 INFO rollback
+2024-04-16T14:10:50.352411+0300 DEBUG {'title': 'test', 'description': 'test', 'status': 'planned', 'created_at': '2024-04-16T14:10:50.053018', 'updated_at': '2024-04-16T14:10:50.053018', 'username': 'user_test', 'id': 1}
+2024-04-16T14:11:09.841805+0300 INFO dev
+2024-04-16T14:11:10.171622+0300 INFO rollback
+2024-04-16T14:11:10.179221+0300 INFO rollback
+2024-04-16T14:11:10.197446+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:11:10.199445+0300 DEBUG Added session 3274d8bb9abb763d
+2024-04-16T14:11:10.206447+0300 DEBUG Added session c5b2077b7e561765
+2024-04-16T14:11:10.207447+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:11:10.215854+0300 DEBUG Added session ebbd62337c2ee70d
+2024-04-16T14:11:10.216854+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:11:10.224013+0300 INFO rollback
+2024-04-16T14:11:10.243054+0300 DEBUG Added session 0e2673c89200925a
+2024-04-16T14:11:10.252601+0300 INFO rollback
+2024-04-16T14:11:10.254196+0300 DEBUG {'title': 'test', 'description': 'test', 'status': 'planned', 'created_at': '2024-04-16T14:11:09.956824', 'updated_at': '2024-04-16T14:11:09.956824', 'username': 'user_test', 'id': 1}
+2024-04-16T14:11:51.266020+0300 INFO dev
+2024-04-16T14:11:51.630333+0300 INFO rollback
+2024-04-16T14:11:51.640338+0300 INFO rollback
+2024-04-16T14:11:51.665665+0300 DEBUG Added session e0895d728e530e3a
+2024-04-16T14:11:51.677287+0300 DEBUG Added session f6fa10b506c6b24b
+2024-04-16T14:11:51.678315+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:11:51.693371+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:11:51.695371+0300 DEBUG Added session ec82258309aa9453
+2024-04-16T14:11:51.695371+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:11:51.702369+0300 INFO rollback
+2024-04-16T14:11:51.718376+0300 DEBUG Added session 82640ca59fc03807
+2024-04-16T14:11:51.728371+0300 INFO rollback
+2024-04-16T14:11:51.728371+0300 DEBUG {'title': 'test', 'description': 'test', 'status': 'planned', 'created_at': '2024-04-16T14:11:51.382843', 'updated_at': '2024-04-16T14:11:51.382843', 'username': 'user_test', 'id': 1}
+2024-04-16T14:12:05.789086+0300 INFO dev
+2024-04-16T14:12:06.152803+0300 INFO rollback
+2024-04-16T14:12:06.165805+0300 INFO rollback
+2024-04-16T14:12:06.190803+0300 DEBUG Added session 163dced2037f2a03
+2024-04-16T14:12:06.197800+0300 DEBUG Added session 865bb640f59113b7
+2024-04-16T14:12:06.198801+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:12:06.208802+0300 DEBUG Added session 0d3fe895baecbc69
+2024-04-16T14:12:06.209802+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:12:06.218803+0300 INFO rollback
+2024-04-16T14:12:06.233807+0300 DEBUG Added session 0e84a00d6a393994
+2024-04-16T14:12:06.247803+0300 INFO rollback
+2024-04-16T14:12:06.248803+0300 DEBUG {'title': 'test', 'description': 'test', 'status': 'planned', 'created_at': '2024-04-16T14:12:05.914086', 'updated_at': '2024-04-16T14:12:05.914086', 'username': 'user_test', 'id': 1}
+2024-04-16T14:12:14.460993+0300 INFO dev
+2024-04-16T14:12:14.875747+0300 INFO rollback
+2024-04-16T14:12:14.888746+0300 INFO rollback
+2024-04-16T14:12:14.911745+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:12:14.913744+0300 DEBUG Added session 3997966554b1c63d
+2024-04-16T14:12:14.920747+0300 DEBUG Added session fafab352a1152859
+2024-04-16T14:12:14.920747+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:12:14.929747+0300 DEBUG Added session 55a6ed9829b3332d
+2024-04-16T14:12:14.929747+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:12:14.937745+0300 INFO rollback
+2024-04-16T14:12:14.952747+0300 DEBUG Added session 6d468f753ab2ebab
+2024-04-16T14:12:14.960746+0300 INFO rollback
+2024-04-16T14:12:14.961768+0300 DEBUG dict_items([('title', 'test'), ('description', 'test'), ('status', 'planned'), ('created_at', '2024-04-16T14:12:14.578598'), ('updated_at', '2024-04-16T14:12:14.578598'), ('username', 'user_test'), ('id', 1)])
+2024-04-16T14:12:36.269404+0300 INFO dev
+2024-04-16T14:12:36.641919+0300 INFO rollback
+2024-04-16T14:12:36.649918+0300 INFO rollback
+2024-04-16T14:12:36.669916+0300 DEBUG Added session 88c185cbcbdb2c26
+2024-04-16T14:12:36.677919+0300 DEBUG Added session 395c23632a841c46
+2024-04-16T14:12:36.677919+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:12:36.689918+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:12:36.691919+0300 DEBUG Added session a387b35e3734d289
+2024-04-16T14:12:36.692918+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:12:36.702919+0300 INFO rollback
+2024-04-16T14:12:36.717917+0300 DEBUG Added session 4886626c657b4878
+2024-04-16T14:12:36.728956+0300 INFO rollback
+2024-04-16T14:12:36.729952+0300 DEBUG False
+2024-04-16T14:13:39.070270+0300 INFO dev
+2024-04-16T14:13:39.405136+0300 INFO rollback
+2024-04-16T14:13:39.413623+0300 INFO rollback
+2024-04-16T14:13:39.431426+0300 DEBUG Added session 34a5653ca4a19bbd
+2024-04-16T14:13:39.439720+0300 DEBUG Added session 452cca317cbd8f75
+2024-04-16T14:13:39.440716+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:13:39.450445+0300 DEBUG Added session 8818f865e917089e
+2024-04-16T14:13:39.451442+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:13:39.459084+0300 INFO rollback
+2024-04-16T14:13:39.472836+0300 DEBUG Added session cef59f80870bd2ea
+2024-04-16T14:13:39.481101+0300 INFO rollback
+2024-04-16T14:13:39.483127+0300 DEBUG False
+2024-04-16T14:14:44.670241+0300 INFO dev
+2024-04-16T14:14:45.070223+0300 INFO rollback
+2024-04-16T14:14:45.078220+0300 INFO rollback
+2024-04-16T14:14:45.100853+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:14:45.103854+0300 DEBUG Added session d8ea2250b261a8df
+2024-04-16T14:14:45.111302+0300 DEBUG Added session aa00395eea32a6c6
+2024-04-16T14:14:45.112302+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:14:45.119909+0300 DEBUG Added session f90c5e06e5009952
+2024-04-16T14:14:45.120908+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:14:45.131518+0300 INFO rollback
+2024-04-16T14:14:45.149239+0300 DEBUG Added session 35ad33de9bb89094
+2024-04-16T14:14:45.158259+0300 INFO rollback
+2024-04-16T14:16:54.371302+0300 INFO dev
+2024-04-16T14:16:54.782331+0300 INFO rollback
+2024-04-16T14:16:54.793197+0300 INFO rollback
+2024-04-16T14:16:54.812987+0300 DEBUG Added session ec647e14c28d1ace
+2024-04-16T14:16:54.823627+0300 DEBUG Added session 8b3df8945dd28316
+2024-04-16T14:16:54.823627+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:16:54.837624+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:16:54.838624+0300 DEBUG Added session 5905bbb6a5924022
+2024-04-16T14:16:54.839624+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:16:54.846627+0300 INFO rollback
+2024-04-16T14:16:54.868277+0300 DEBUG Added session bd31a696f260e5f7
+2024-04-16T14:16:54.882276+0300 INFO rollback
+2024-04-16T14:16:54.891311+0300 INFO rollback
+2024-04-16T14:16:54.910276+0300 DEBUG Added session b26358a4607fc4a0
+2024-04-16T14:16:54.913317+0300 INFO 405
+2024-04-16T14:17:45.806286+0300 INFO dev
+2024-04-16T14:17:46.150736+0300 INFO rollback
+2024-04-16T14:17:46.163834+0300 INFO rollback
+2024-04-16T14:17:46.183167+0300 DEBUG Added session fb22e297f90f9f7d
+2024-04-16T14:17:46.192851+0300 DEBUG Added session 7a00e76753c63571
+2024-04-16T14:17:46.193852+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:17:46.205488+0300 DEBUG Added session 9eb778f3c0e98031
+2024-04-16T14:17:46.206488+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:17:46.214135+0300 INFO rollback
+2024-04-16T14:17:46.232859+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:17:46.233858+0300 DEBUG Added session ef3b5129b7ae6dbf
+2024-04-16T14:17:46.243860+0300 INFO rollback
+2024-04-16T14:17:46.254497+0300 INFO rollback
+2024-04-16T14:17:46.271226+0300 DEBUG Added session 2351ae2148e5c88e
+2024-04-16T14:17:46.281997+0300 INFO rollback
+2024-04-16T14:17:46.284136+0300 INFO 200
+2024-04-16T14:19:12.375700+0300 INFO dev
+2024-04-16T14:19:12.697193+0300 INFO rollback
+2024-04-16T14:19:12.705192+0300 INFO rollback
+2024-04-16T14:19:12.725193+0300 DEBUG Added session 3acd989c57f28ea2
+2024-04-16T14:19:12.732193+0300 DEBUG Added session f2d49a805fe34c52
+2024-04-16T14:19:12.732193+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:19:12.741398+0300 DEBUG Added session 4af120da58c9dbc1
+2024-04-16T14:19:12.742400+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:19:12.749522+0300 INFO rollback
+2024-04-16T14:19:12.762974+0300 DEBUG Added session 0def09bdcd9dab25
+2024-04-16T14:19:12.772569+0300 INFO rollback
+2024-04-16T14:19:12.780175+0300 INFO rollback
+2024-04-16T14:19:12.797173+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:19:12.798174+0300 DEBUG Added session b78b8718838af196
+2024-04-16T14:19:12.804845+0300 INFO rollback
+2024-04-16T14:19:12.806847+0300 DEBUG {'title': 'test', 'description': 'test', 'status': 'planned', 'created_at': '2024-04-16T14:19:12.479666', 'updated_at': '2024-04-16T14:19:12.479666', 'username': 'user_test', 'id': 1}
+2024-04-16T14:19:12.812049+0300 INFO rollback
+2024-04-16T14:19:12.826094+0300 DEBUG Added session e22d627d357206b8
+2024-04-16T14:19:12.833693+0300 INFO rollback
+2024-04-16T14:19:12.834692+0300 INFO 200
+2024-04-16T14:19:45.383321+0300 INFO dev
+2024-04-16T14:19:45.717669+0300 INFO rollback
+2024-04-16T14:19:45.725678+0300 INFO rollback
+2024-04-16T14:19:45.740503+0300 DEBUG Added session 722246be85bb52f4
+2024-04-16T14:19:45.747165+0300 DEBUG Added session 57920743f729c2bf
+2024-04-16T14:19:45.748163+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:19:45.756136+0300 DEBUG Added session 2aa584594b8f4fc8
+2024-04-16T14:19:45.756136+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:19:45.764763+0300 INFO rollback
+2024-04-16T14:19:45.781065+0300 DEBUG Added session ae5b7517523fe729
+2024-04-16T14:19:45.790761+0300 INFO rollback
+2024-04-16T14:19:45.798789+0300 INFO rollback
+2024-04-16T14:19:45.813978+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:19:45.814977+0300 DEBUG Added session d125adebf966d26e
+2024-04-16T14:19:45.822747+0300 INFO rollback
+2024-04-16T14:19:45.829524+0300 INFO rollback
+2024-04-16T14:19:45.843741+0300 DEBUG Added session 2bda139b0b7f31f2
+2024-04-16T14:19:45.852314+0300 INFO rollback
+2024-04-16T14:21:31.748662+0300 INFO dev
+2024-04-16T14:21:32.081095+0300 INFO rollback
+2024-04-16T14:21:32.089796+0300 INFO rollback
+2024-04-16T14:21:32.112149+0300 DEBUG Added session df4e237dc12a9164
+2024-04-16T14:21:32.119681+0300 DEBUG Added session be17d466af7dbd02
+2024-04-16T14:21:32.120678+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:21:32.129384+0300 DEBUG Added session 968d8132e61d9631
+2024-04-16T14:21:32.129384+0300 DEBUG Tokens updated successfully!
+2024-04-16T14:21:32.137381+0300 INFO rollback
+2024-04-16T14:21:32.154159+0300 DEBUG Added session 6f7cc945e6e8fb72
+2024-04-16T14:21:32.164161+0300 INFO rollback
+2024-04-16T14:21:32.170694+0300 INFO rollback
+2024-04-16T14:21:32.190225+0300 DEBUG all sessions of the user user_test have been cleared
+2024-04-16T14:21:32.192226+0300 DEBUG Added session 8eceb37091c2aabc
+2024-04-16T14:21:32.199089+0300 INFO rollback
+2024-04-16T14:21:32.207406+0300 INFO rollback
+2024-04-16T14:21:32.222104+0300 DEBUG Added session e85bc00bb1b9a2c3
+2024-04-16T14:21:32.231664+0300 INFO rollback
+2024-04-16T14:21:32.239637+0300 INFO rollback
+2024-04-16T14:21:32.253925+0300 DEBUG Added session 0dbd54f1aca4ea5b
+2024-04-16T14:21:32.266077+0300 INFO rollback
+2024-04-16T16:02:28.283118+0300 INFO dev
+2024-04-16T16:02:46.562683+0300 INFO dev
+2024-04-16T16:03:04.398377+0300 INFO dev
+2024-04-16T16:04:04.493775+0300 INFO dev
+2024-04-16T16:04:33.412258+0300 INFO dev

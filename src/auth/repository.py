@@ -4,6 +4,7 @@ import json
 from src.config import settings
 from .schemas import Session
 from .db import get_redis
+from src.log.logger import logger
 
 
 def add_session(user: str, refresh_token: str, session: Session, cache: Redis = get_redis()):
@@ -13,11 +14,11 @@ def add_session(user: str, refresh_token: str, session: Session, cache: Redis = 
         for k in sessions.keys():
             a = cache.hdel('refresh_tokens', k)
         cache.delete(user)
-        print("Очищены все сессии пользователя {}".format(user))
+        logger.debug("all sessions of the user {} have been cleared".format(user))
 
     cache.hset(user, refresh_token, session.model_dump_json())
     cache.hset('refresh_tokens', refresh_token, user)
-    print("Added session {}".format(refresh_token))
+    logger.debug("Added session {}".format(refresh_token))
 
 
 def get_user_sessions(user: str, cache: Redis = get_redis()) -> dict[str: Session]:

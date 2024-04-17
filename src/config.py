@@ -2,6 +2,8 @@ from functools import lru_cache
 import os
 from pydantic_settings import BaseSettings
 
+from src.log.logger import logger
+
 
 class Settings(BaseSettings):
     """
@@ -62,7 +64,6 @@ class ProductionSettings(Settings):
 class DevelopmentSettings(Settings):
     class Config:
         env_file = os.path.join(os.path.dirname(__file__), ".dev.env")
-        print(env_file)
 
 
 class TestingSettings(Settings):
@@ -75,13 +76,15 @@ def get_settings():
     """
     Get the settings from the environment.
     """
-    mode = os.getenv("API_MODE")
-    if mode in ("test", "testing"):
-        return TestingSettings()
-    if mode in ("dev", "development"):
-        return DevelopmentSettings()
-    if mode in ("prod", "production"):
-        return ProductionSettings()
+    mode = os.getenv("APP_MODE")
+    logger.info(mode if mode else 'dev')
+    match mode:
+        case ("test"):
+            return TestingSettings()
+        case ("dev"):
+            return DevelopmentSettings()
+        case ("prod"):
+            return ProductionSettings()
     return DevelopmentSettings()
 
 
