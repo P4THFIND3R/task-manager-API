@@ -1,9 +1,9 @@
 from abc import ABC, abstractmethod
 
 from src.database.db import async_session_maker
-from src.repositories.user_repository import UserRepository
-from src.repositories.task_repository import TaskRepository
 from src.log.logger import logger
+from src.repositories.task_repository import TaskRepository
+from src.repositories.user_repository import UserRepository
 
 
 class IUnitOfWork(ABC):

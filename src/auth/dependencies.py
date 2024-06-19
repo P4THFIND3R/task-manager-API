@@ -1,11 +1,13 @@
 from typing import Annotated
+
 from fastapi import Depends
-from src.services.user_service import UserService
-from src.utils.uow import IUnitOfWork, UnitOfWork
 from redis import Redis
-from .db import get_redis
 
 from src.auth import security
+from src.services.user_service import UserService
+from src.utils.uow import IUnitOfWork, UnitOfWork
+
+from .db import get_redis
 
 UOWDep = Annotated[IUnitOfWork, Depends(UnitOfWork)]
 

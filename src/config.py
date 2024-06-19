@@ -1,5 +1,6 @@
-from functools import lru_cache
 import os
+from functools import lru_cache
+
 from pydantic_settings import BaseSettings
 
 from src.log.logger import logger
@@ -9,6 +10,7 @@ class Settings(BaseSettings):
     """
     Settings for the app.
     """
+
     APP_NAME: str
     APP_DESCRIPTION: str | None
 
@@ -30,17 +32,17 @@ class Settings(BaseSettings):
     DB_DRIVER_ASYNC: str
 
     # postgres params
-    POSTGRES_DB: str = 'postgres'
-    POSTGRES_USER: str = 'postgres'
-    POSTGRES_PASSWORD: str = 'admin'
+    POSTGRES_DB: str = "postgres"
+    POSTGRES_USER: str = "postgres"
+    POSTGRES_PASSWORD: str = "admin"
 
     # redis params
-    REDIS_HOST: str = 'localhost'
+    REDIS_HOST: str = "localhost"
     REDIS_PORT: int = 6379
     REDIS_AUTH_DB: int = 0
     REDIS_WS_DB: int = 1
-    REDIS_PASSWORD: str = ''
-    REDIS_PREFIX: str = ''
+    REDIS_PASSWORD: str = ""
+    REDIS_PREFIX: str = ""
     REDIS_MAX_CONNECTIONS: int = 10
     REDIS_MIN_CONNECTIONS: int = 1
     REDIS_MAX_IDLE_TIME: int = 60
@@ -77,7 +79,7 @@ def get_settings():
     Get the settings from the environment.
     """
     mode = os.getenv("APP_MODE")
-    logger.info(mode if mode else 'dev')
+    logger.info(mode if mode else "dev")
     match mode:
         case ("test"):
             return TestingSettings()

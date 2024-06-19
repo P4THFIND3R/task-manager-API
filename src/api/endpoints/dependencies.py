@@ -1,7 +1,9 @@
 from typing import Annotated
+
 from fastapi import Depends
-from src.services.user_service import UserService
+
 from src.services.task_service import TaskService
+from src.services.user_service import UserService
 from src.utils.uow import IUnitOfWork, UnitOfWork
 
 UOWDep = Annotated[IUnitOfWork, Depends(UnitOfWork)]

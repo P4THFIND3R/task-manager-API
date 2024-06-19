@@ -1,30 +1,30 @@
-from logging.config import fileConfig
 import os  # Добавили импорт os для извлечения из окружения наших переменных
 import sys  # Добавили импорт модуля sys для работы с путями
+from logging.config import fileConfig
 
 # Тут добавили в пути нашу папку src, чтобы алембик её увидел.
-sys.path.append(os.path.join(sys.path[0], 'src'))
+sys.path.append(os.path.join(sys.path[0], "src"))
 
 from logging.config import fileConfig
-from sqlalchemy import engine_from_config
-from sqlalchemy import pool
-from alembic import context
 
+from sqlalchemy import engine_from_config, pool
+
+from alembic import context
 from src.config import settings
 
 # чтобы алембик увидел таблицы, их нужно импортировать
-from src.database.models import *
+from src.database.models import Base
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
 section = config.config_ini_section
-config.set_section_option(section, 'DB_PORT', settings.DB_PORT)
-config.set_section_option(section, 'DB_USER', settings.DB_USER)
-config.set_section_option(section, 'DB_PASSWORD', settings.DB_PASSWORD)
-config.set_section_option(section, 'DB_HOST', settings.DB_HOST)
-config.set_section_option(section, 'DB_NAME', settings.DB_NAME)
-config.set_section_option(section, 'DB_DRIVER_ASYNC', settings.DB_DRIVER_SYNC)
+config.set_section_option(section, "DB_PORT", settings.DB_PORT)
+config.set_section_option(section, "DB_USER", settings.DB_USER)
+config.set_section_option(section, "DB_PASSWORD", settings.DB_PASSWORD)
+config.set_section_option(section, "DB_HOST", settings.DB_HOST)
+config.set_section_option(section, "DB_NAME", settings.DB_NAME)
+config.set_section_option(section, "DB_DRIVER_ASYNC", settings.DB_DRIVER_SYNC)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
@@ -78,9 +78,7 @@ def run_migrations_online() -> None:
     )
 
     with connectable.connect() as connection:
-        context.configure(
-            connection=connection, target_metadata=target_metadata
-        )
+        context.configure(connection=connection, target_metadata=target_metadata)
 
         with context.begin_transaction():
             context.run_migrations()

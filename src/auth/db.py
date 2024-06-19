@@ -1,4 +1,5 @@
-from redis import Redis, ConnectionPool
+from redis import ConnectionPool, Redis
+
 from src.config import settings
 
 
@@ -8,7 +9,7 @@ def create_redis_pool():
         port=settings.REDIS_PORT,
         db=settings.REDIS_AUTH_DB,
         decode_responses=True,
-        max_connections=10
+        max_connections=10,
     )
 
 

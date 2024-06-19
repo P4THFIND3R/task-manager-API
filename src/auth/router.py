@@ -1,19 +1,18 @@
-from fastapi import APIRouter, Depends, Response, Request
-from fastapi.security import OAuth2PasswordRequestForm
 from typing import Annotated
 
-from src.api.schemas.user import UserSchema
-import src.auth.security as security
+from fastapi import APIRouter, Depends, Request, Response
+from fastapi.security import OAuth2PasswordRequestForm
+
 import src.auth.exceptions as exceptions
-from .schemas import Session, SessionToRedis, Tokens, Payload
-from .dependencies import user_service_dep, fingerprint_dep
-from .repository import add_session, get_session
+import src.auth.security as security
+from src.api.schemas.user import UserSchema
 from src.log.logger import logger
 
-router = APIRouter(
-    prefix='/auth',
-    tags=['Authentication']
-)
+from .dependencies import fingerprint_dep, user_service_dep
+from .repository import add_session, get_session
+from .schemas import Payload, Session, SessionToRedis, Tokens
+
+router = APIRouter(prefix="/auth", tags=["Authentication"])
 
 
 async def check_user(userdata: Annotated[OAuth2PasswordRequestForm, Depends()], user_service: user_service_dep):
@@ -24,16 +23,17 @@ async def check_user(userdata: Annotated[OAuth2PasswordRequestForm, Depends()], 
     return user.username
 
 
-@router.post('/signin')
+@router.post("/signin")
 async def signin(userdata: UserSchema, user_service: user_service_dep):
     userdata.password = security.hash_password(userdata.password)
     user = await user_service.create_user(userdata)
     return user
 
 
-@router.post('/login')
-async def authentication(response: Response,
-                         fingerprint: fingerprint_dep, user: Annotated[str, 'username'] = Depends(check_user)):
+@router.post("/login")
+async def authentication(
+    response: Response, fingerprint: fingerprint_dep, user: Annotated[str, "username"] = Depends(check_user)
+):
     # create access and refresh tokens
     access_token: str = security.create_access_token(user)
     session_to_add: SessionToRedis = security.create_session(user, fingerprint)
@@ -41,14 +41,14 @@ async def authentication(response: Response,
     add_session(user, session_to_add.refresh_token, session_to_add.session)
 
     # setting tokens in cookies
-    security.set_tokens_to_cookies(response,
-                                   Tokens(access_token=access_token, refresh_token=session_to_add.refresh_token))
-    return Tokens(**{'access_token': access_token, 'refresh_token': session_to_add.refresh_token})
+    security.set_tokens_to_cookies(
+        response, Tokens(access_token=access_token, refresh_token=session_to_add.refresh_token)
+    )
+    return Tokens(**{"access_token": access_token, "refresh_token": session_to_add.refresh_token})
 
 
-@router.post('/update')
-async def update_tokens(request: Request, response: Response,
-                        fingerprint: fingerprint_dep):
+@router.post("/update")
+async def update_tokens(request: Request, response: Response, fingerprint: fingerprint_dep):
     # get tokens from cookies, we are only interested in refresh_token, access_token may be missing
     tokens: Tokens = security.get_tokens_from_cookies(request)
     # get session by refresh token
@@ -64,7 +64,7 @@ async def update_tokens(request: Request, response: Response,
         raise exceptions.RefreshTokenExpired
 
 
-@router.post('/authorize')
+@router.post("/authorize")
 async def authorize(request: Request, response: Response, fingerprint: fingerprint_dep):
     # get tokens from cookies
     tokens: Tokens = security.get_tokens_from_cookies(request)

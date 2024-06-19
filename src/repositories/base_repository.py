@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from sqlalchemy import select, insert, delete
+from sqlalchemy import delete, insert, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 

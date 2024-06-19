@@ -3,6 +3,7 @@ fastapi~=0.110.0
 SQLAlchemy~=2.0.29
 pydantic~=2.6.4
 pydantic_settings
+pre-commit
 psycopg2==2.9.9
 asyncpg
 redis~=5.0.3

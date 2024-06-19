@@ -1,9 +1,9 @@
 import datetime
 
-from sqlalchemy import select, insert, update
+from sqlalchemy import insert, select, update
 
-from src.repositories.base_repository import Repository
 from src.database.models import Tasks
+from src.repositories.base_repository import Repository
 
 
 class TaskRepository(Repository):
@@ -24,7 +24,12 @@ class TaskRepository(Repository):
             return result.to_read_model()
 
     async def update_task(self, task_id: int, status: str, updated_at: datetime.datetime):
-        stmt = update(self.model).values(status=status, updated_at=updated_at).where(self.model.id == task_id).returning(self.model)
+        stmt = (
+            update(self.model)
+            .values(status=status, updated_at=updated_at)
+            .where(self.model.id == task_id)
+            .returning(self.model)
+        )
         result = await self.session.execute(stmt)
         result = result.scalars().first()
         if result:

@@ -16,7 +16,7 @@ class TaskService:
             res = await self.uow.task_repos.get_all(username=username)
             for task in res:
                 if completed is False:
-                    if task.status.value == 'completed':
+                    if task.status.value == "completed":
                         res.remove(task)
             return res
 
@@ -39,8 +39,9 @@ class TaskService:
 
     async def update_task(self, task_id: int, task_data: TaskUpdate):
         async with self.uow:
-            res = await self.uow.task_repos.update_task(task_id, status=task_data.status.value,
-                                                        updated_at=task_data.updated_at)
+            res = await self.uow.task_repos.update_task(
+                task_id, status=task_data.status.value, updated_at=task_data.updated_at
+            )
             if res:
                 res = res.to_read_model()
                 await self.uow.commit()

@@ -17,4 +17,3 @@ class UserService:
             res = res.to_read_model()
             await self.uow.commit()
             return res
-
