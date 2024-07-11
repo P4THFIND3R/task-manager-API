@@ -27,7 +27,7 @@ http://localhost:80 (по умолчанию)
 * TODO: имплементировать приоритет задач, доступ к задачам на основе ролей пользователей.
 ## API
 Документация и список конечных точек доступны по адресу http://localhost/docs
-![[Pasted image 20240417103040.png]]
+![image](https://github.com/P4THFIND3R/task-manager-API/assets/102167990/184506e0-d53e-4ffa-a7d6-2fc3c97ff544)
 Так-же доступен endpoint WS для получения информация об изменении задач в режиме реального времени:
 * ws://localhost:8001/api/tasks/ws/
 ## Тестирование
@@ -52,7 +52,8 @@ cd ..
 pytest -p no:warnings -s
 ```
 В случае успешного прохождения тестов увидим следующее:
-![[Pasted image 20240417113414.png]]
+![image](https://github.com/P4THFIND3R/task-manager-API/assets/102167990/99024462-cd5f-4d7c-af86-aec0ddd2748d)
+
 ## Структура проекта
 ```
 +---alembic
