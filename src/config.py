@@ -49,6 +49,11 @@ class Settings(BaseSettings):
     REDIS_MAX_ACTIVE_TIME: int = 60
     REDIS_CONNECTION_TIMEOUT: int = 10
 
+    # rabbitmq params
+    RABBITMQ_PORT: int
+    RABBITMQ_DEFAULT_USER: str
+    RABBITMQ_DEFAULT_PASS: str
+
     @property
     def ASYNC_DATABASE_URL(self):
         return f"postgresql+{self.DB_DRIVER_ASYNC}://{self.DB_USER}:{self.DB_PASSWORD}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
