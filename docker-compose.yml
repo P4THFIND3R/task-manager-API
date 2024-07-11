@@ -6,21 +6,22 @@ services:
     expose:
       - 5432
     env_file:
-      - /src/.prod.env
-    #volumes:
-      #- /home/data/postgresql:/var/lib/postgresql/data
+      - /src/.dev.env
+    volumes:
+      - /home/data/postgresql:/var/lib/postgresql/data
   redis:
     image: redis:alpine3.19
     container_name: redis_db
     expose:
       - 6379
-    #volumes:
-      #- /home/data/redis:/data
+    volumes:
+      - /home/data/redis:/data
+
   app:
     build:
       context: .
     env_file:
-      - /src/.prod.env
+      - /src/.dev.env
     container_name: app
     restart: on-failure
     environment:
@@ -30,3 +31,34 @@ services:
       - "80:80"
     depends_on:
       - db
+
+  rabbit_mq:
+    image: rabbitmq:latest
+    env_file:
+      - /src/.dev.env
+    container_name: rabbit_mq
+    restart: on-failure
+    expose:
+      - 5672
+
+  celery:
+    build:
+      context: .
+    env_file:
+      - /src/.dev.env
+    container_name: celery
+    restart: on-failure
+    command: celery --app=src.api.endpoints.celery_router:app worker -l INFO
+    depends_on:
+      - rabbit_mq
+
+  flower:
+    build:
+      context: .
+    container_name: flower
+    command: celery --app=src.api.endpoints.celery_router:app flower --loglevel=INFO
+    restart: on-failure
+    depends_on:
+      - rabbit_mq
+    ports:
+      - "5555:5555"
